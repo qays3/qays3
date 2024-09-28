@@ -36,4 +36,5 @@ I'm always open to collaborating on projects related to:
 
 Feel free to reach out to me via GitHub or [email](mailto:info@qayssarayra.com) for potential collaborations.
 
- 
+## Credits
+[qays3](https://github.com/qays3) ([Support qays](https://buymeacoffee.com/hidden)) 
