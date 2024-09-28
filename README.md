@@ -22,7 +22,7 @@ I'm always eager to learn new tools, techniques, and frameworks, and I love coll
 ## 🌐 Connect With Me
 
 - **LinkedIn**: [Qays Sarayer](https://linkedin.com/in/qays-sarayer)
-- **GitHub**: [RozaSako](https://github.com/qays3)
+- **GitHub**: [qays3](https://github.com/qays3)
 - **Website**: [CyberAliens](https://cyberalien.net)
 - **My Website**: [portfolio](https://qayssarayra.com/)
 ## 💬 Let's Collaborate
