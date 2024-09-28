@@ -5,7 +5,7 @@
 
 I'm a passionate developer and tech enthusiast with a focus on building scalable applications and solving complex problems in the realms of **web development, cybersecurity**, and **cloud computing**. With a deep interest in **CTF competitions** and **IoT systems**, I aim to contribute to projects that merge these technologies to create innovative solutions.
 
-I'm always eager to learn new tools, techniques, and frameworks, and I love collaborating with others to develop exciting projects. My work ranges from **FastAPI applications** and **MySQL databases** to **IoT simulations** using **Cisco Packet Tracer**.
+I'm always eager to learn new tools, techniques, and frameworks, and I love collaborating with others to develop exciting projects. My work ranges from **FastAPI applications** and **MySQL databases** to **IoT simulations**.
 
 ## 🛠️ Skills & Technologies
 
