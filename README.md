@@ -9,12 +9,12 @@ I'm always eager to learn new tools, techniques, and frameworks, and I love coll
 
 ## 🛠️ Skills & Technologies
 
-- **Languages**: Python, JavaScript, PHP, C++, SQL, Bash
-- **Frameworks**: FastAPI, Flask, jQuery, Bootstrap
+- **Languages**: Python, JavaScript, PHP, C++, SQL, Bash, GO
+- **Frameworks**: FastAPI, Flask, jQuery, Bootstrap, Laravel
 - **Databases**: MySQL, PostgreSQL
-- **Tools**: Docker, Git, VirtualBox, Packet Tracer
+- **Tools**: Docker, Git, VirtualBox, PostMan, VScode
 - **Cloud & Infrastructure**: VPS, OpenVPN, SSL/TLS, DDoS protection, CDN setup
-- **Cybersecurity**: CTF challenge design, penetration testing, malware analysis, XenoTrojan project
+- **Cybersecurity**: CTF challenge design, penetration testing, malware analysis, IDS/IPS
 
  
  
