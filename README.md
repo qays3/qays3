@@ -21,7 +21,7 @@ I’m always excited to learn new tools and techniques, and I like collaborating
 
 ## 🌐 Connect With Me
 
-- **LinkedIn**: [Qays Sarayer](https://www.linkedin.com/in/qays-sarayra/)
+- **LinkedIn**: [Qays sarayra](https://www.linkedin.com/in/qays-sarayra/)
 - **GitHub**: [qays3](https://github.com/qays3)
 - **Website**: [CyberAliens](https://cyberalien.net)
 - **My Website**: [portfolio](https://qayssarayra.com/)
