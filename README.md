@@ -1,5 +1,5 @@
 
-# Hi, I'm Qays Sarayer 👋
+# Hi, I'm Qays Sarayra 👋
 
 ## 🚀 About Me
 
@@ -11,9 +11,9 @@ I'm always eager to learn new tools, techniques, and frameworks, and I love coll
 
 - **Languages**: Python, JavaScript, PHP, C++, SQL, Bash, GO
 - **Frameworks**: FastAPI, Flask, jQuery, Bootstrap, Laravel
-- **Databases**: MySQL, PostgreSQL
+- **Databases**: MySQL, PostgreSQL, SQLite
 - **Tools**: Docker, Git, VirtualBox, PostMan, VScode
-- **Cloud & Infrastructure**: VPS, OpenVPN, SSL/TLS, DDoS protection, CDN setup
+- **Cloud & Infrastructure**: VPS, OpenVPN, SSL/TLS, DDoS protection, CDN setup, Hostinger, namecheap
 - **Cybersecurity**: CTF challenge design, penetration testing, malware analysis, IDS/IPS
 
  
@@ -51,7 +51,7 @@ Feel free to reach out to me via GitHub or [email](mailto:info@qayssarayra.com) 
 [![](https://visitcount.itsvg.in/api?id=qays3&icon=0&color=0)](https://visitcount.itsvg.in)
 
   ## 💰 You can help me by Donating
-  [![BuyMeACoffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/https://buymeacoffee.com/hidden) [![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/https://www.paypal.com/paypalme/my/settings?flow=cmV0dXJuVXJsPWh0dHBzOi8vd3d3LnBheXBhbC5jb20vbXlhY2NvdW50L3RyYW5zZmVyL2hvbWVwYWdlL3JlcXVlc3QmY2FuY2VsVXJsPWh0dHBzOi8vd3d3LnBheXBhbC5jb20vbXlhY2NvdW50L3RyYW5zZmVyL2hvbWVwYWdlL3JlcXVlc3Q=) 
+  [![BuyMeACoffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/https://buymeacoffee.com/hidden) 
 
   
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
