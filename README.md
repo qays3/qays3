@@ -1,52 +1,184 @@
-# What if building cool stuff was the only rule? 
-Hey, I’m Qays 👋
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qays Sarayra - Personal Page</title>
+    <style>
+        body {
+            background-color: #2a2a2a;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1, h2, h3 {
+            color: #8a2be2;
+        }
+        .typing-animation {
+            font-size: 1.5em;
+            color: #8a2be2;
+            border-right: 3px solid #8a2be2;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 3s steps(30) forwards, blink 0.75s step-end infinite;
+        }
+        @keyframes typing {
+            to {
+                width: 100%;
+            }
+        }
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .badge {
+            background-color: #8a2be2;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        a {
+            color: #8a2be2;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="typing-animation">What if building cool stuff was the only rule?</h1>
+        <p>Hey, I’m Qays 👋</p>
+        <p>I build practical solutions web apps, security tools, and cloud systems. I focus on making things that work efficiently and solve real problems.</p>
+        <p>From FastAPI apps to Discord bots and cloud management systems, I take on projects that require skill and creativity. If that sounds like something you’re into, feel free to DM me.</p>
 
-I build practical solutions web apps, security tools, and cloud systems. I focus on making things that work efficiently and solve real problems.
+        <h2>🛠️ Toolbox</h2>
+        <ul>
+            <li><strong>Programming:</strong> Python, JavaScript, PHP, C++, Go, Bash, SQL</li>
+            <li><strong>Frameworks:</strong> FastAPI, Flask, Laravel, Bootstrap, jQuery</li>
+            <li><strong>Databases:</strong> MySQL, PostgreSQL, SQLite</li>
+            <li><strong>Development:</strong> Docker, Git, Postman, VS Code, VirtualBox</li>
+            <li><strong>Hosting & Domains:</strong> Azure, Hostinger, Namecheap</li>
+            <li><strong>Infrastructure:</strong> VPS setups, OpenVPN, SSL/TLS, CDN configs, DDoS protection</li>
+            <li><strong>Security:</strong> Penetration testing, malware analysis, IDS/IPS deployment</li>
+        </ul>
 
-From FastAPI apps to Discord bots and cloud management systems, I take on projects that require skill and creativity. If that sounds like something you’re into, feel free to DM me.
+        <h2>🌐 Links</h2>
+        <ul>
+            <li><a href="https://qayssarayra.com/">Portfolio</a></li>
+            <li><a href="https://github.com/qays3">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/qays-sarayra/">LinkedIn</a></li>
+            <li><a href="https://cyberalien.net">CyberAliens</a></li>
+        </ul>
 
-## 🛠️ Toolbox
+        <h2>💬 Let’s Team Up</h2>
+        <p>I’m into:</p>
+        <ul>
+            <li>FastAPI and APIs</li>
+            <li>IoT builds and automation</li>
+            <li>Cloud management systems</li>
+            <li>Tools that fix problems or cause good trouble xd</li>
+        </ul>
+        <p>Hit me up on GitHub or <a href="mailto:info@qayssarayra.com">email</a>. Let’s turn your ideas into something that stands out.</p>
 
-- **Programming**: Python, JavaScript, PHP, C++, Go, Bash, SQL  
-- **Frameworks**: FastAPI, Flask, Laravel, Bootstrap, jQuery  
-- **Databases**: MySQL, PostgreSQL, SQLite  
-- **Development**: Docker, Git, Postman, VS Code, VirtualBox  
-- **Hosting & Domains**: Azure, Hostinger, Namecheap  
-- **Infrastructure**: VPS setups, OpenVPN, SSL/TLS, CDN configs, DDoS protection  
-- **Security**: Penetration testing, malware analysis, IDS/IPS deployment  
+        <h2>💻 Tech Stack:</h2>
+        <div>
+            <span class="badge">C++</span>
+            <span class="badge">CSS3</span>
+            <span class="badge">Go</span>
+            <span class="badge">GraphQL</span>
+            <span class="badge">HTML5</span>
+            <span class="badge">JavaScript</span>
+            <span class="badge">Markdown</span>
+            <span class="badge">PHP</span>
+            <span class="badge">PowerShell</span>
+            <span class="badge">Python</span>
+            <span class="badge">R</span>
+            <span class="badge">Ruby</span>
+            <span class="badge">Rust</span>
+            <span class="badge">Shell Script</span>
+            <span class="badge">Solidity</span>
+            <span class="badge">TypeScript</span>
+            <span class="badge">Windows Terminal</span>
+            <span class="badge">YAML</span>
+            <span class="badge">Zig</span>
+            <span class="badge">AWS</span>
+            <span class="badge">Cloudflare</span>
+            <span class="badge">GithubPages</span>
+            <span class="badge">Google Cloud</span>
+            <span class="badge">PythonAnywhere</span>
+            <span class="badge">Flask</span>
+            <span class="badge">FastAPI</span>
+            <span class="badge">Hugo</span>
+            <span class="badge">Jinja</span>
+            <span class="badge">Laravel</span>
+            <span class="badge">React</span>
+            <span class="badge">Vue.js</span>
+            <span class="badge">Apache</span>
+            <span class="badge">Nginx</span>
+            <span class="badge">MariaDB</span>
+            <span class="badge">SQLite</span>
+            <span class="badge">MySQL</span>
+            <span class="badge">MongoDB</span>
+            <span class="badge">Canva</span>
+            <span class="badge">Figma</span>
+            <span class="badge">Sketch</span>
+            <span class="badge">Pandas</span>
+            <span class="badge">NumPy</span>
+            <span class="badge">Plotly</span>
+            <span class="badge">Scipy</span>
+            <span class="badge">TensorFlow</span>
+            <span class="badge">PyTorch</span>
+            <span class="badge">scikit-learn</span>
+            <span class="badge">Keras</span>
+            <span class="badge">mlflow</span>
+            <span class="badge">Matplotlib</span>
+            <span class="badge">Git</span>
+            <span class="badge">GitHub</span>
+            <span class="badge">GitLab</span>
+            <span class="badge">GitHub Actions</span>
+            <span class="badge">GitLab CI</span>
+            <span class="badge">Bitbucket</span>
+            <span class="badge">Cisco</span>
+            <span class="badge">Docker</span>
+            <span class="badge">TOR</span>
+            <span class="badge">Postman</span>
+            <span class="badge">Portfolio</span>
+            <span class="badge">Packer</span>
+            <span class="badge">Notion</span>
+            <span class="badge">Mosquitto</span>
+            <span class="badge">Meta</span>
+            <span class="badge">Raspberry Pi</span>
+            <span class="badge">Swagger</span>
+            <span class="badge">Zigbee</span>
+            <span class="badge">CodeCov</span>
+            <span class="badge">CMake</span>
+            <span class="badge">Crowdin</span>
+            <span class="badge">Power Bi</span>
+            <span class="badge">Ansible</span>
+            <span class="badge">Terraform</span>
+            <span class="badge">Trello</span>
+            <span class="badge">Homebridge</span>
+            <span class="badge">Pi-Hole</span>
+        </div>
 
-## 🌐 Links
+        <h2>📊 GitHub Stats:</h2>
+        <p><img src="https://github-readme-stats.vercel.app/api?username=qays3&theme=dark&hide_border=false&include_all_commits=false&count_private=true" alt="GitHub Stats"></p>
+        <p><img src="https://github-readme-streak-stats.herokuapp.com/?user=qays3&theme=dark&hide_border=false" alt="GitHub Streak"></p>
+        <p><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qays3&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact" alt="Top Languages"></p>
 
-- [Portfolio](https://qayssarayra.com/)  
-- [GitHub](https://github.com/qays3)  
-- [LinkedIn](https://www.linkedin.com/in/qays-sarayra/)  
-- [CyberAliens](https://cyberalien.net)
+        <hr>
 
-## 💬 Let’s Team Up
+        <p><a href="https://visitcount.itsvg.in/api?id=qays3&icon=0&color=0" target="_blank"><img src="https://visitcount.itsvg.in/api?id=qays3&icon=0&color=0" alt="visit count"></a></p>
 
-I’m into:
-
-- FastAPI and APIs  
-- IoT builds and automation  
-- Cloud management systems
-- Tools that fix problems or cause good trouble xd
-
-Hit me up on GitHub or [email](mailto:info@qayssarayra.com).  
-Let’s turn your ideas into something that stands out.
-
-
-# 💻 Tech Stack:
-![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![Go](https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white) ![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white) ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white) ![PowerShell](https://img.shields.io/badge/PowerShell-%235391FE.svg?style=for-the-badge&logo=powershell&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![R](https://img.shields.io/badge/r-%23276DC3.svg?style=for-the-badge&logo=r&logoColor=white) ![Ruby](https://img.shields.io/badge/ruby-%23CC342D.svg?style=for-the-badge&logo=ruby&logoColor=white) ![Rust](https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white) ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white) ![Solidity](https://img.shields.io/badge/Solidity-%23363636.svg?style=for-the-badge&logo=solidity&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![Windows Terminal](https://img.shields.io/badge/Windows%20Terminal-%234D4D4D.svg?style=for-the-badge&logo=windows-terminal&logoColor=white) ![YAML](https://img.shields.io/badge/yaml-%23ffffff.svg?style=for-the-badge&logo=yaml&logoColor=151515) ![Zig](https://img.shields.io/badge/Zig-%23F7A41D.svg?style=for-the-badge&logo=zig&logoColor=white) ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white) ![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white) ![GithubPages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white) ![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white) ![PythonAnywhere](https://img.shields.io/badge/pythonanywhere-%232F9FD7.svg?style=for-the-badge&logo=pythonanywhere&logoColor=151515) ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi) ![Hugo](https://img.shields.io/badge/Hugo-black.svg?style=for-the-badge&logo=Hugo) ![Jinja](https://img.shields.io/badge/jinja-white.svg?style=for-the-badge&logo=jinja&logoColor=black) ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Vue.js](https://img.shields.io/badge/vue.js-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D) ![Apache](https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white) ![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white) ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white) ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white) ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white) ![Sketch](https://img.shields.io/badge/Sketch-FFB387?style=for-the-badge&logo=sketch&logoColor=black) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white) ![Plotly](https://img.shields.io/badge/Plotly-%233F4F75.svg?style=for-the-badge&logo=plotly&logoColor=white) ![Scipy](https://img.shields.io/badge/SciPy-%230C55A5.svg?style=for-the-badge&logo=scipy&logoColor=%white) ![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white) ![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white) ![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white) ![Keras](https://img.shields.io/badge/Keras-%23D00000.svg?style=for-the-badge&logo=Keras&logoColor=white) ![mlflow](https://img.shields.io/badge/mlflow-%23d9ead3.svg?style=for-the-badge&logo=numpy&logoColor=blue) ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black) ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![GitLab](https://img.shields.io/badge/gitlab-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white) ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white) ![GitLab CI](https://img.shields.io/badge/gitlab%20CI-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white) ![Bitbucket](https://img.shields.io/badge/bitbucket-%230047B3.svg?style=for-the-badge&logo=bitbucket&logoColor=white) ![Cisco](https://img.shields.io/badge/cisco-%23049fd9.svg?style=for-the-badge&logo=cisco&logoColor=black) ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white) ![TOR](https://img.shields.io/badge/tor-%237E4798.svg?style=for-the-badge&logo=tor-project&logoColor=white) ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white) ![Portfolio](https://img.shields.io/badge/Portfolio-%23000000.svg?style=for-the-badge&logo=firefox&logoColor=#FF7139) ![Packer](https://img.shields.io/badge/packer-%23E7EEF0.svg?style=for-the-badge&logo=packer&logoColor=%2302A8EF) ![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white) ![Mosquitto](https://img.shields.io/badge/mosquitto-%233C5280.svg?style=for-the-badge&logo=eclipsemosquitto&logoColor=white) ![Meta](https://img.shields.io/badge/Meta-%230467DF.svg?style=for-the-badge&logo=Meta&logoColor=white) ![Raspberry Pi](https://img.shields.io/badge/-RaspberryPi-C51A4A?style=for-the-badge&logo=Raspberry-Pi) ![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white) ![Zigbee](https://img.shields.io/badge/zigbee-%23EB0443.svg?style=for-the-badge&logo=zigbee&logoColor=white) ![CodeCov](https://img.shields.io/badge/codecov-%23ff0077.svg?style=for-the-badge&logo=codecov&logoColor=white) ![CMake](https://img.shields.io/badge/CMake-%23008FBA.svg?style=for-the-badge&logo=cmake&logoColor=white) ![Crowdin](https://img.shields.io/badge/Crowdin-2E3340.svg?style=for-the-badge&logo=Crowdin&logoColor=white) ![Power Bi](https://img.shields.io/badge/power_bi-F2C811?style=for-the-badge&logo=powerbi&logoColor=black) ![Ansible](https://img.shields.io/badge/ansible-%231A1918.svg?style=for-the-badge&logo=ansible&logoColor=white) ![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white) ![Trello](https://img.shields.io/badge/Trello-%23026AA7.svg?style=for-the-badge&logo=Trello&logoColor=white) ![Homebridge](https://img.shields.io/badge/homebridge-%23491F59.svg?style=for-the-badge&logo=homebridge&logoColor=white) ![Pi-Hole](https://img.shields.io/badge/pihole-%2396060C.svg?style=for-the-badge&logo=pi-hole&logoColor=white)
-# 📊 GitHub Stats:
-![](https://github-readme-stats.vercel.app/api?username=qays3&theme=dark&hide_border=false&include_all_commits=false&count_private=true)<br/>
-![](https://github-readme-streak-stats.herokuapp.com/?user=qays3&theme=dark&hide_border=false)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=qays3&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
-
----
-[![](https://visitcount.itsvg.in/api?id=qays3&icon=0&color=0)](https://visitcount.itsvg.in)
-
-  ## 💰 You can help me by Donating
-  [![BuyMeACoffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/https://buymeacoffee.com/hidden) 
-
-  
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+        <h2>💰 You can help me by Donating</h2>
+        <p><a href="https://buymeacoffee.com/hidden"><img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me a Coffee"></a></p>
+    </div>
+</body>
+</html>
