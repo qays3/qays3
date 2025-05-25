@@ -13,7 +13,7 @@ From FastAPI apps to Discord bots and cloud management systems, I take on projec
 - **Development**: Docker, Git, Postman, VS Code, VirtualBox  
 - **Hosting & Domains**: Azure, Hostinger, Namecheap  
 - **Infrastructure**: VPS setups, OpenVPN, SSL/TLS, CDN configs, DDoS protection  
-- **Security**: Penetration testing, malware analysis, IDS/IPS deployment  
+- **Security**: Security testing, malware analysis, IDS/IPS deployment  
 
 ## 🌐 Links
 
