@@ -8,7 +8,7 @@ From FastAPI apps to Discord bots and cloud management systems, I take on projec
 ## 🛠️ Toolbox
 
 - **Programming**: Python, JavaScript, PHP, C++, Go, Bash, SQL  
-- **Frameworks**: FastAPI, Flask, Laravel, Bootstrap, jQuery  
+- **Frameworks**: FastAPI, Flask, Laravel, tailwindui  
 - **Databases**: MySQL, PostgreSQL, SQLite  
 - **Development**: Docker, Git, Postman, VS Code, VirtualBox  
 - **Hosting & Domains**: Azure, Hostinger, Namecheap  
