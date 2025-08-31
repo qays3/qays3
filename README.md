@@ -20,7 +20,7 @@ From FastAPI apps to Discord bots and cloud management systems, I take on projec
 - [Portfolio](https://qayssarayra.com/)  
 - [GitHub](https://github.com/qays3)  
 - [LinkedIn](https://www.linkedin.com/in/qays-sarayra/)  
-- [CyberAliens](https://cyberalien.net)
+
 
 ## 💬 Let’s Team Up
 
