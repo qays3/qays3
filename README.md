@@ -7,13 +7,14 @@ From FastAPI apps to Discord bots and cloud management systems, I take on projec
 
 ## 🛠️ Toolbox
 
-- **Programming**: Python, JavaScript, PHP, C++, Go, Bash, SQL  
-- **Frameworks**: FastAPI, Flask, Laravel, tailwindui  
-- **Databases**: MySQL, PostgreSQL, SQLite  
-- **Development**: Docker, Git, Postman, VS Code, VirtualBox  
-- **Hosting & Domains**: Azure, Hostinger, Namecheap  
-- **Infrastructure**: VPS setups, OpenVPN, SSL/TLS, CDN configs, DDoS protection  
-- **Security**: Security testing, malware analysis, IDS/IPS deployment  
+- **Programming**: Python, JavaScript, PHP, C++, Go, Bash, SQL.
+- **Frameworks**: FastAPI, Laravel.  
+- **Databases**: MySQL, PostgreSQL, SQLite.
+- **Development**: Docker, kubernetes, Git, Postman, VS Code, VirtualBox.  
+- **Hosting & Domains**: Azure, Hostinger, Namecheap.  
+- **Infrastructure**: VPS setups, OpenVPN, SSL/TLS, CDN configs, DDoS protection.
+- **Security**: Jenkins, Snyk, Ghidra, Wireshark/Tshark, Splunk, Snort, Suricata, Autopsy, FTK
+Imager, Volatility, Nmap, Amass, Metasploit.
 
 ## 🌐 Links
 
