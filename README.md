@@ -191,7 +191,7 @@ Security Engineer with expertise in Security Operations (SOC), security engineer
 <br>
 
 <a href="https://github.com/qays3">
-  <img src="https://img.shields.io/badge/Profile%20Views-10932-A855F7?style=for-the-badge" />
+  <img src="https://komarev.com/ghpvc/?username=qays3&color=A855F7&style=for-the-badge" />
 </a>
 
 <div>
