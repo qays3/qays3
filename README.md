@@ -48,18 +48,9 @@ Security Engineer with expertise in Security Operations (SOC), security engineer
         <img height='196px' src="https://streak-stats.demolab.com?user=qays3&locale=en&mode=weekly&theme=tokyonight&hide_border=true&border_radius=5&order=3&ring=A855F7&fire=A855F7&currStreakLabel=A855F7" />
       </a>
     </td>
-    <td rowspan=2 width='512px'>
-      <a href="https://github.com/qays3">
-        <img width='100%' src="https://github-readme-stats.vercel.app/api/top-langs?username=qays3&locale=en&hide_title=true&layout=compact&card_width=320&langs_count=12&theme=tokyonight&hide_border=true&order=2" />
-      </a>
-    </td>
   </tr>
   <tr>
-    <td align='right'>
-      <a href="https://github.com/qays3">
-        <img height='196px' src="https://github-readme-stats.vercel.app/api?username=qays3&hide_title=true&hide_rank=false&show_icons=true&include_all_commits=false&count_private=true&disable_animations=true&theme=tokyonight&locale=en&hide_border=true&order=1" />
-      </a>
-    </td>
+ 
   </tr>
 </table>
 
@@ -205,7 +196,7 @@ Security Engineer with expertise in Security Operations (SOC), security engineer
 
 <div>
   <a href="https://github.com/qays3">
-    <img style="100%" src="" />
+    <img style="100%" src="https://capsule-render.vercel.app/api?type=waving&height=100&section=footer&reversal=false&color=gradient&customColorList=12,14,16" />
   </a>
 </div>
 
