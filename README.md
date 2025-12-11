@@ -41,18 +41,7 @@ Security Engineer with expertise in Security Operations (SOC), security engineer
 
 <div align="center">
 
-<table>
-  <tr>
-    <td align='right'>
-      <a href="https://github.com/qays3">
-        <img height='196px' src="https://streak-stats.demolab.com?user=qays3&locale=en&mode=weekly&theme=tokyonight&hide_border=true&border_radius=5&order=3&ring=A855F7&fire=A855F7&currStreakLabel=A855F7" />
-      </a>
-    </td>
-  </tr>
-  <tr>
- 
-  </tr>
-</table>
+
 
 </div>
 
