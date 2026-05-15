@@ -4,13 +4,13 @@
 
 <br/>
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&pause=1000&center=true&vCenter=true&width=520&color=A855F7&lines=Security+Engineer+%2B+Full+Stack+Developer;SOC+%7C+Cloud+Security+%7C+DevSecOps;Building+secure%2C+scalable+solutions;Always+learning%2C+always+building" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&pause=1000&center=true&vCenter=true&width=520&color=A855F7&lines=Security+Analyst+%2B+Security+Engineer;Full+Stack+Developer;SOC+%7C+Cloud+Security+%7C+SIEM;Building+secure%2C+scalable+solutions;Always+learning%2C+always+building" alt="Typing SVG" />
 
 <br/>
 
 ![](https://img.shields.io/badge/SOC-534AB7?style=for-the-badge&logoColor=white)
 ![](https://img.shields.io/badge/Cloud%20Security-7F77DD?style=for-the-badge&logoColor=white)
-![](https://img.shields.io/badge/DevSecOps-3C3489?style=for-the-badge&logoColor=white)
+![](https://img.shields.io/badge/Security%20Analyst-3C3489?style=for-the-badge&logoColor=white)
 ![](https://img.shields.io/badge/Open%20Source-AFA9EC?style=for-the-badge&logoColor=white)
 
 </div>
@@ -25,7 +25,7 @@ Security Engineer with expertise in Security Operations (SOC), security engineer
 
 <table>
 <tr>
-<td>Specialized in <b>Security Operations</b>, <b>Cloud Security Hardening</b>, and learning to be a <b>DevSecOps Engineer</b></td>
+<td>Specialized in <b>Security Operations</b>, <b>Security Analysis</b>, and <b>Cloud Security Hardening</b></td>
 </tr>
 <tr>
 <td>Building <b>automated SOC workflows</b> and <b>SIEM/EDR integrations</b></td>
@@ -44,10 +44,10 @@ Security Engineer with expertise in Security Operations (SOC), security engineer
 
 <div align="center">
 
-| Security Operations | Cloud Security | Full Stack Dev | DevSecOps |
+| Security Operations | Cloud Security | Full Stack Dev | Security Analysis |
 |:---:|:---:|:---:|:---:|
-| SOC workflows, SIEM & EDR integrations | WAF deployment & cloud hardening | Security-first scalable architecture | Automated pipelines & open-source tooling |
-| ![](https://img.shields.io/badge/ELK-534AB7?style=flat-square&logoColor=white) ![](https://img.shields.io/badge/Wazuh-7F77DD?style=flat-square&logoColor=white) | ![](https://img.shields.io/badge/Azure-534AB7?style=flat-square&logo=microsoft-azure&logoColor=white) ![](https://img.shields.io/badge/WAF-7F77DD?style=flat-square&logoColor=white) | ![](https://img.shields.io/badge/Laravel-534AB7?style=flat-square&logo=laravel&logoColor=white) ![](https://img.shields.io/badge/Tailwind-7F77DD?style=flat-square&logo=tailwind-css&logoColor=white) | ![](https://img.shields.io/badge/Docker-534AB7?style=flat-square&logoColor=white) ![](https://img.shields.io/badge/Terraform-7F77DD?style=flat-square&logoColor=white) |
+| SOC workflows, SIEM & EDR integrations | WAF deployment & cloud hardening | Security-first scalable architecture | Threat hunting, incident response & reporting |
+| ![](https://img.shields.io/badge/ELK-534AB7?style=flat-square&logoColor=white) ![](https://img.shields.io/badge/Wazuh-7F77DD?style=flat-square&logoColor=white) ![](https://img.shields.io/badge/Splunk-3C3489?style=flat-square&logo=splunk&logoColor=white) ![](https://img.shields.io/badge/QRadar-AFA9EC?style=flat-square&logoColor=white) | ![](https://img.shields.io/badge/Azure-534AB7?style=flat-square&logo=microsoft-azure&logoColor=white) ![](https://img.shields.io/badge/WAF-7F77DD?style=flat-square&logoColor=white) | ![](https://img.shields.io/badge/Laravel-534AB7?style=flat-square&logo=laravel&logoColor=white) ![](https://img.shields.io/badge/Tailwind-7F77DD?style=flat-square&logo=tailwind-css&logoColor=white) | ![](https://img.shields.io/badge/Splunk-534AB7?style=flat-square&logo=splunk&logoColor=white) ![](https://img.shields.io/badge/QRadar-7F77DD?style=flat-square&logoColor=white) |
 
 </div>
 
@@ -62,13 +62,12 @@ Security Engineer with expertise in Security Operations (SOC), security engineer
 ![ELK Stack](https://img.shields.io/badge/ELK_Stack-534AB7?style=for-the-badge&logoColor=white)
 ![Wazuh](https://img.shields.io/badge/Wazuh-3C3489?style=for-the-badge&logoColor=white)
 ![WAF](https://img.shields.io/badge/WAF-7F77DD?style=for-the-badge&logoColor=white)
+![Splunk](https://img.shields.io/badge/Splunk-534AB7?style=for-the-badge&logo=splunk&logoColor=white)
+![QRadar](https://img.shields.io/badge/QRadar-3C3489?style=for-the-badge&logoColor=white)
 
 **Cloud & Infrastructure**
 
 ![Azure](https://img.shields.io/badge/Azure-534AB7?style=for-the-badge&logo=microsoft-azure&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-3C3489?style=for-the-badge&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-7F77DD?style=for-the-badge&logo=kubernetes&logoColor=white)
-![Terraform](https://img.shields.io/badge/Terraform-534AB7?style=for-the-badge&logo=terraform&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-3C3489?style=for-the-badge&logo=linux&logoColor=white)
 
 **Development**
