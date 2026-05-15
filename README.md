@@ -47,7 +47,7 @@ Security Engineer with expertise in Security Operations (SOC), security engineer
 | Security Operations | Cloud Security | Full Stack Dev | DevSecOps |
 |:---:|:---:|:---:|:---:|
 | SOC workflows, SIEM & EDR integrations | WAF deployment & cloud hardening | Security-first scalable architecture | Automated pipelines & open-source tooling |
-| ![](https://img.shields.io/badge/ELK-534AB7?style=flat-square&logoColor=white) ![](https://img.shields.io/badge/Wazuh-7F77DD?style=flat-square&logoColor=white) | ![](https://img.shields.io/badge/Azure-534AB7?style=flat-square&logo=microsoft-azure&logoColor=white) ![](https://img.shields.io/badge/WAF-7F77DD?style=flat-square&logoColor=white) | ![](https://img.shields.io/badge/React-534AB7?style=flat-square&logoColor=white) ![](https://img.shields.io/badge/Node.js-7F77DD?style=flat-square&logoColor=white) | ![](https://img.shields.io/badge/Docker-534AB7?style=flat-square&logoColor=white) ![](https://img.shields.io/badge/Terraform-7F77DD?style=flat-square&logoColor=white) |
+| ![](https://img.shields.io/badge/ELK-534AB7?style=flat-square&logoColor=white) ![](https://img.shields.io/badge/Wazuh-7F77DD?style=flat-square&logoColor=white) | ![](https://img.shields.io/badge/Azure-534AB7?style=flat-square&logo=microsoft-azure&logoColor=white) ![](https://img.shields.io/badge/WAF-7F77DD?style=flat-square&logoColor=white) | ![](https://img.shields.io/badge/Laravel-534AB7?style=flat-square&logo=laravel&logoColor=white) ![](https://img.shields.io/badge/Tailwind-7F77DD?style=flat-square&logo=tailwind-css&logoColor=white) | ![](https://img.shields.io/badge/Docker-534AB7?style=flat-square&logoColor=white) ![](https://img.shields.io/badge/Terraform-7F77DD?style=flat-square&logoColor=white) |
 
 </div>
 
@@ -74,10 +74,11 @@ Security Engineer with expertise in Security Operations (SOC), security engineer
 **Development**
 
 ![Python](https://img.shields.io/badge/Python-534AB7?style=for-the-badge&logo=python&logoColor=white)
-![React](https://img.shields.io/badge/React-3C3489?style=for-the-badge&logo=react&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-7F77DD?style=for-the-badge&logo=node.js&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-534AB7?style=for-the-badge&logo=postgresql&logoColor=white)
-![Bash](https://img.shields.io/badge/Bash-3C3489?style=for-the-badge&logo=gnu-bash&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-3C3489?style=for-the-badge&logo=fastapi&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-7F77DD?style=for-the-badge&logo=laravel&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-534AB7?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-3C3489?style=for-the-badge&logo=postgresql&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-7F77DD?style=for-the-badge&logo=gnu-bash&logoColor=white)
 
 </div>
 
@@ -87,10 +88,6 @@ Security Engineer with expertise in Security Operations (SOC), security engineer
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=qays3&show_icons=true&theme=transparent&title_color=A855F7&icon_color=7F77DD&text_color=AFA9EC&border_color=534AB7&hide_border=false&border_radius=12" height="160" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=qays3&layout=compact&theme=transparent&title_color=A855F7&text_color=AFA9EC&border_color=534AB7&hide_border=false&border_radius=12" height="160" />
-
-<br/>
 
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=qays3&radius=16&theme=tokyo-night&area=false&order=5&hide_border=true&hide_title=true&color=A855F7&line=A855F7&point=FFFFFF" width="100%" />
 
