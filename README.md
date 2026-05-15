@@ -9,8 +9,7 @@
 <br/>
 
 ![](https://img.shields.io/badge/SOC-534AB7?style=for-the-badge&logoColor=white)
-![](https://img.shields.io/badge/Cloud%20Security-7F77DD?style=for-the-badge&logoColor=white)
-![](https://img.shields.io/badge/Security%20Analyst-3C3489?style=for-the-badge&logoColor=white)
+![](https://img.shields.io/badge/Security%20Engineer-7F77DD?style=for-the-badge&logoColor=white)
 ![](https://img.shields.io/badge/Open%20Source-AFA9EC?style=for-the-badge&logoColor=white)
 
 </div>
@@ -25,7 +24,7 @@ Security Engineer with expertise in Security Operations (SOC), security engineer
 
 <table>
 <tr>
-<td>Specialized in <b>Security Operations</b>, <b>Security Analysis</b>, and <b>Cloud Security Hardening</b></td>
+<td>Specialized in <b>Security Operations</b>, <b>Security Engineering</b>, and <b>Full Stack Development</b></td>
 </tr>
 <tr>
 <td>Building <b>automated SOC workflows</b> and <b>SIEM/EDR integrations</b></td>
@@ -44,10 +43,10 @@ Security Engineer with expertise in Security Operations (SOC), security engineer
 
 <div align="center">
 
-| Security Operations | Cloud Security | Full Stack Dev | Security Analysis |
-|:---:|:---:|:---:|:---:|
-| SOC workflows, SIEM & EDR integrations | WAF deployment & cloud hardening | Security-first scalable architecture | Threat hunting, incident response & reporting |
-| ![](https://img.shields.io/badge/ELK-534AB7?style=flat-square&logoColor=white) ![](https://img.shields.io/badge/Wazuh-7F77DD?style=flat-square&logoColor=white) ![](https://img.shields.io/badge/Splunk-3C3489?style=flat-square&logo=splunk&logoColor=white) ![](https://img.shields.io/badge/QRadar-AFA9EC?style=flat-square&logoColor=white) | ![](https://img.shields.io/badge/Azure-534AB7?style=flat-square&logo=microsoft-azure&logoColor=white) ![](https://img.shields.io/badge/WAF-7F77DD?style=flat-square&logoColor=white) | ![](https://img.shields.io/badge/Laravel-534AB7?style=flat-square&logo=laravel&logoColor=white) ![](https://img.shields.io/badge/Tailwind-7F77DD?style=flat-square&logo=tailwind-css&logoColor=white) | ![](https://img.shields.io/badge/Splunk-534AB7?style=flat-square&logo=splunk&logoColor=white) ![](https://img.shields.io/badge/QRadar-7F77DD?style=flat-square&logoColor=white) |
+| Security Operations | Security Engineer | Full Stack Dev |
+|:---:|:---:|:---:|
+| SOC workflows, SIEM & EDR integrations | Security engineering, WAF & cloud hardening | Security-first scalable architecture |
+| ![](https://img.shields.io/badge/ELK-534AB7?style=flat-square&logoColor=white) ![](https://img.shields.io/badge/Wazuh-7F77DD?style=flat-square&logoColor=white) ![](https://img.shields.io/badge/Splunk-3C3489?style=flat-square&logo=splunk&logoColor=white) ![](https://img.shields.io/badge/QRadar-AFA9EC?style=flat-square&logoColor=white) | ![](https://img.shields.io/badge/Azure-534AB7?style=flat-square&logo=microsoft-azure&logoColor=white) ![](https://img.shields.io/badge/WAF-7F77DD?style=flat-square&logoColor=white) | ![](https://img.shields.io/badge/Laravel-534AB7?style=flat-square&logo=laravel&logoColor=white) ![](https://img.shields.io/badge/Tailwind-7F77DD?style=flat-square&logo=tailwind-css&logoColor=white) |
 
 </div>
 
