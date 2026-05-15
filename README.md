@@ -47,7 +47,7 @@ Security Engineer with expertise in Security Operations (SOC), security engineer
 | Security Operations | Cloud Security | Full Stack Dev | DevSecOps |
 |:---:|:---:|:---:|:---:|
 | SOC workflows, SIEM & EDR integrations | WAF deployment & cloud hardening | Security-first scalable architecture | Automated pipelines & open-source tooling |
-| ![](https://img.shields.io/badge/ELK-534AB7?style=flat-square&logoColor=white) ![](https://img.shields.io/badge/Wazuh-7F77DD?style=flat-square&logoColor=white) | ![](https://img.shields.io/badge/AWS-534AB7?style=flat-square&logoColor=white) ![](https://img.shields.io/badge/WAF-7F77DD?style=flat-square&logoColor=white) | ![](https://img.shields.io/badge/React-534AB7?style=flat-square&logoColor=white) ![](https://img.shields.io/badge/Node.js-7F77DD?style=flat-square&logoColor=white) | ![](https://img.shields.io/badge/Docker-534AB7?style=flat-square&logoColor=white) ![](https://img.shields.io/badge/Terraform-7F77DD?style=flat-square&logoColor=white) |
+| ![](https://img.shields.io/badge/ELK-534AB7?style=flat-square&logoColor=white) ![](https://img.shields.io/badge/Wazuh-7F77DD?style=flat-square&logoColor=white) | ![](https://img.shields.io/badge/Azure-534AB7?style=flat-square&logo=microsoft-azure&logoColor=white) ![](https://img.shields.io/badge/WAF-7F77DD?style=flat-square&logoColor=white) | ![](https://img.shields.io/badge/React-534AB7?style=flat-square&logoColor=white) ![](https://img.shields.io/badge/Node.js-7F77DD?style=flat-square&logoColor=white) | ![](https://img.shields.io/badge/Docker-534AB7?style=flat-square&logoColor=white) ![](https://img.shields.io/badge/Terraform-7F77DD?style=flat-square&logoColor=white) |
 
 </div>
 
@@ -65,7 +65,7 @@ Security Engineer with expertise in Security Operations (SOC), security engineer
 
 **Cloud & Infrastructure**
 
-![AWS](https://img.shields.io/badge/AWS-534AB7?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![Azure](https://img.shields.io/badge/Azure-534AB7?style=for-the-badge&logo=microsoft-azure&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-3C3489?style=for-the-badge&logo=docker&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-7F77DD?style=for-the-badge&logo=kubernetes&logoColor=white)
 ![Terraform](https://img.shields.io/badge/Terraform-534AB7?style=for-the-badge&logo=terraform&logoColor=white)
