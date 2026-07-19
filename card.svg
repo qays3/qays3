@@ -1,0 +1,441 @@
+<svg viewBox="0 0 900 460" width="900" height="460" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Qays Sarayra, Security Engineer">
+  <style>
+    .base { font-family: -apple-system, 'Segoe UI', Roboto, Ubuntu, Helvetica, Arial, sans-serif; }
+
+    @keyframes tw1 { 0%,100% { opacity:.45 } 50% { opacity:1 } }
+    @keyframes tw2 { 0%,100% { opacity:.35 } 50% { opacity:.9 } }
+    @keyframes tw3 { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @keyframes coronaBreathe { 0%,100% { opacity:.5 } 50% { opacity:.85 } }
+    @keyframes ringGlint { 0%,100% { opacity:.35; transform: scale(.65) } 50% { opacity:1; transform: scale(1.05) } }
+    @keyframes moonSettle { 0%,100% { transform: translate(-2px,-1px) } 50% { transform: translate(2px,1px) } }
+    @keyframes rise { from { opacity:0; transform: translateY(12px) } to { opacity:1; transform: translateY(0) } }
+    @keyframes lineSweep {
+      0%   { opacity:0; transform: translateX(0) }
+      8%   { opacity:1 }
+      70%  { opacity:1 }
+      85%  { opacity:0; transform: translateX(196px) }
+      100% { opacity:0; transform: translateX(196px) }
+    }
+    @keyframes chipSweep {
+      0%   { transform: skewX(-20deg) translateX(0) }
+      55%  { transform: skewX(-20deg) translateX(780px) }
+      100% { transform: skewX(-20deg) translateX(780px) }
+    }
+    @keyframes floatDad {
+      0%,100% { transform: translate(585px,236px) rotate(-6deg) }
+      50%     { transform: translate(582px,240px) rotate(4deg) }
+    }
+    @keyframes floatBaby {
+      0%,100% { transform: translate(621px,207px) rotate(10deg) }
+      50%     { transform: translate(629px,199px) rotate(-8deg) }
+    }
+    @keyframes meteor {
+      0%   { opacity:0; transform: translate(0,0) }
+      2%   { opacity:.9 }
+      9%   { opacity:0; transform: translate(180px,96px) }
+      100% { opacity:0; transform: translate(180px,96px) }
+    }
+
+    .t1 { animation: tw1 4.2s ease-in-out infinite }
+    .t2 { animation: tw2 5.6s ease-in-out infinite }
+    .t3 { animation: tw3 7.1s ease-in-out infinite }
+    .corona { animation: coronaBreathe 9s ease-in-out infinite }
+    .glint  { transform-box: fill-box; transform-origin: center; animation: ringGlint 6s ease-in-out infinite }
+    .moon   { animation: moonSettle 22s ease-in-out infinite }
+    .rise   { animation: rise .9s ease both }
+    .lsweep { animation: lineSweep 3.4s ease-in-out infinite; animation-delay: 1s }
+    .csweep { animation: chipSweep 5.5s ease-in-out infinite; animation-delay: 1.6s }
+    .dad  { animation: floatDad 16s ease-in-out infinite }
+    .baby { animation: floatBaby 12s ease-in-out infinite }
+
+    /* hover the eclipse: the moon slowly slides away and the sun emerges;
+       leave, and it drifts back into totality (interactive when the SVG is
+       loaded as a document; img-tag embeds never receive hover) */
+    .moonShift { transition: transform 3.5s ease-in-out }
+    .glintWrap { transition: opacity 1.8s ease }
+    .sunGlow   { opacity: 0; transition: opacity 3s ease }
+    .eclipse:hover .moonShift { transform: translate(84px,-34px) }
+    .eclipse:hover .glintWrap { opacity: 0 }
+    .eclipse:hover .sunGlow   { opacity: .95 }
+    .meteor  { animation: meteor 14s linear infinite }
+    .meteor2 { animation: meteor 19s linear infinite; animation-delay: 8s }
+
+    .d1 { animation-delay: .2s } .d2 { animation-delay: .5s } .d3 { animation-delay: .9s }
+    .d4 { animation-delay: 1.3s } .d5 { animation-delay: 1.8s } .d6 { animation-delay: 2.4s }
+    .r1 { animation-delay: .15s } .r2 { animation-delay: .3s } .r3 { animation-delay: .45s }
+    .r4 { animation-delay: .6s } .r5 { animation-delay: .75s }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+      .meteor, .meteor2, .lsweep { opacity: 0 !important; }
+    }
+  </style>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="900" y2="460" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0D0A1D"/>
+      <stop offset=".5" stop-color="#14102C"/>
+      <stop offset="1" stop-color="#0A0815"/>
+    </linearGradient>
+    <linearGradient id="border" x1="0" y1="0" x2="900" y2="460" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A855F7"/>
+      <stop offset=".5" stop-color="#534AB7"/>
+      <stop offset="1" stop-color="#2E2760"/>
+    </linearGradient>
+
+    <!-- shimmering 45deg gradient for the name: deep purple, violet, pale lilac, amber -->
+    <linearGradient id="nameGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="200" y2="200" spreadMethod="repeat">
+      <stop offset="0"   stop-color="#6d28d9"/>
+      <stop offset=".25" stop-color="#a855f7"/>
+      <stop offset=".5"  stop-color="#e9d5ff"/>
+      <stop offset=".68" stop-color="#d97706"/>
+      <stop offset=".84" stop-color="#b45309"/>
+      <stop offset="1"   stop-color="#6d28d9"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="0 0" to="200 200" dur="6s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <linearGradient id="line" x1="64" y1="0" x2="330" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A855F7"/>
+      <stop offset="1" stop-color="#A855F7" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lineSpark" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FDE68A" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#F3E8FF"/>
+      <stop offset="1" stop-color="#FDE68A" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#EDEDF5" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="trail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity=".9"/>
+    </linearGradient>
+
+    <radialGradient id="core" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset=".3" stop-color="#EDE9FF" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#EDE9FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="coreBlue" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#EAF1FF"/>
+      <stop offset=".3" stop-color="#C9D8FF" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#C9D8FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="coreWarm" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#FFF4E4"/>
+      <stop offset=".3" stop-color="#FFE7C4" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#FFE7C4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="coronaG" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".92"/>
+      <stop offset=".3" stop-color="#F2EEFB" stop-opacity=".4"/>
+      <stop offset="1" stop-color="#E4DDF6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sunG" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset=".55" stop-color="#FDF3D8"/>
+      <stop offset=".85" stop-color="#FCD34D"/>
+      <stop offset="1" stop-color="#F59E0B"/>
+    </radialGradient>
+    <radialGradient id="glintFlare" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#FFFDF5" stop-opacity=".9"/>
+      <stop offset=".4" stop-color="#FDE68A" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#FDE68A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="earthshine" cx=".38" cy=".34" r=".8">
+      <stop offset="0" stop-color="#221C3E" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#080612" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ringGrad" gradientUnits="userSpaceOnUse" x1="664" y1="88" x2="756" y2="180">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#9C92C8" stop-opacity=".5"/>
+    </linearGradient>
+    <radialGradient id="nebula" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#7F5AE0" stop-opacity=".16"/>
+      <stop offset=".6" stop-color="#5A3DA8" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#5A3DA8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="nebula2" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#B06CF2" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#B06CF2" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx=".5" cy=".5" r=".72">
+      <stop offset=".55" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000000" stop-opacity=".34"/>
+    </radialGradient>
+
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="1.4"/>
+    </filter>
+    <filter id="mist" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+    <filter id="heavy" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+
+    <g id="bstar">
+      <path d="M0,-15 L.9,0 L0,15 L-.9,0 Z" fill="#FFFFFF" opacity=".5" filter="url(#soft)"/>
+      <path d="M-15,0 L0,.9 L15,0 L0,-.9 Z" fill="#FFFFFF" opacity=".5" filter="url(#soft)"/>
+      <circle r="6" fill="url(#core)"/>
+      <circle r="1.4" fill="#FFFFFF"/>
+    </g>
+    <g id="mstar"><circle r="3.4" fill="url(#core)"/><circle r=".9" fill="#FFFFFF"/></g>
+    <g id="mstarB"><circle r="3.4" fill="url(#coreBlue)"/><circle r=".9" fill="#EAF1FF"/></g>
+    <g id="mstarW"><circle r="3.4" fill="url(#coreWarm)"/><circle r=".9" fill="#FFF4E4"/></g>
+
+    <!-- fine corona rays: long equatorial, short polar -->
+    <path id="rayL" d="M52,0 L152,-2.2 L152,2.2 Z"/>
+    <path id="rayM" d="M52,0 L110,-2 L110,2 Z"/>
+    <path id="rayS" d="M52,0 L84,-1.8 L84,1.8 Z"/>
+
+    <!-- adrift astronaut, rim-lit from the eclipse (light comes from the upper right) -->
+    <g id="spaceman">
+      <path d="M-7,3 C-15,8 -11,16 -19,20" stroke="#4A4380" stroke-width=".8" opacity=".7"/>
+      <rect x="-8" y="-7" width="5" height="10" rx="1.5" fill="#131029"/>
+      <path d="M-2,5.5 L-5,12" stroke="#201B40" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M2,5.5 L3.5,12.5" stroke="#201B40" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M-3.5,-3 L-7,2" stroke="#201B40" stroke-width="2.2" stroke-linecap="round"/>
+      <rect x="-4" y="-8" width="8" height="14" rx="4" fill="#201B40"/>
+      <path d="M3,-5 L11,-11" stroke="#201B40" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="11" cy="-11" r="1.2" fill="#201B40"/>
+      <circle cx="0" cy="-11.5" r="5" fill="#201B40"/>
+      <circle cx="1.4" cy="-12" r="2.4" fill="#0C0A1E"/>
+      <circle cx="2.2" cy="-12.8" r=".6" fill="#CFC7F2" opacity=".9"/>
+      <circle cx="0" cy="-11.5" r="5" stroke="#E8E2FF" stroke-width=".8" stroke-dasharray="8 24" transform="rotate(-52 0 -11.5)" opacity=".85"/>
+      <path d="M4,-6 C4.6,-2 4.4,2 3.6,5" stroke="#B9AEE8" stroke-width=".8" opacity=".7"/>
+      <path d="M3.2,-5.6 L10.8,-11.4" stroke="#D8D0F5" stroke-width=".7" opacity=".8"/>
+    </g>
+    <g id="spacebaby">
+      <path d="M-1.8,0 L-4.6,2.2" stroke="#1E1A3C" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M-1,1.2 L-3.8,3.6" stroke="#1E1A3C" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M-.6,3.6 L-1.6,6" stroke="#1E1A3C" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M1,3.6 L2,5.8" stroke="#1E1A3C" stroke-width="1.5" stroke-linecap="round"/>
+      <rect x="-2" y="-1.6" width="4" height="5.4" rx="2" fill="#1E1A3C"/>
+      <circle cx="0" cy="-4" r="2.6" fill="#1E1A3C"/>
+      <circle cx="-.8" cy="-4.2" r="1.2" fill="#0C0A1E"/>
+      <circle cx="0" cy="-4" r="2.6" stroke="#E8E2FF" stroke-width=".6" stroke-dasharray="5 12" transform="rotate(-45 0 -4)" opacity=".85"/>
+      <path d="M2,-1.2 L2,2.6" stroke="#B9AEE8" stroke-width=".7" opacity=".8"/>
+    </g>
+
+    <clipPath id="chipsClip">
+      <rect x="64"  y="270" width="46" height="26" rx="13"/>
+      <rect x="120" y="270" width="52" height="26" rx="13"/>
+      <rect x="182" y="270" width="46" height="26" rx="13"/>
+      <rect x="238" y="270" width="46" height="26" rx="13"/>
+      <rect x="294" y="270" width="60" height="26" rx="13"/>
+      <rect x="364" y="270" width="66" height="26" rx="13"/>
+      <rect x="64"  y="306" width="68" height="26" rx="13"/>
+      <rect x="142" y="306" width="50" height="26" rx="13"/>
+      <rect x="202" y="306" width="58" height="26" rx="13"/>
+      <rect x="270" y="306" width="56" height="26" rx="13"/>
+      <rect x="336" y="306" width="64" height="26" rx="13"/>
+      <rect x="410" y="306" width="52" height="26" rx="13"/>
+    </clipPath>
+  </defs>
+
+  <rect x="1.5" y="1.5" width="897" height="457" rx="22" fill="url(#bg)" stroke="url(#border)" stroke-width="1.5"/>
+
+  <!-- interstellar haze and nebulosity -->
+  <ellipse cx="760" cy="70" rx="330" ry="64" fill="#B9A9F0" opacity=".05" filter="url(#heavy)" transform="rotate(-16 760 70)"/>
+  <ellipse cx="700" cy="150" rx="230" ry="150" fill="url(#nebula)" filter="url(#mist)"/>
+  <ellipse cx="620" cy="380" rx="190" ry="90" fill="url(#nebula2)" filter="url(#mist)"/>
+
+  <!-- background star field -->
+  <g>
+    <use href="#mstar"  class="t1"    transform="translate(482,132) scale(.5)"/>
+    <use href="#mstarB" class="t2 d2" transform="translate(524,252) scale(.42)"/>
+    <use href="#mstar"  class="t3 d4" transform="translate(566,168) scale(.6)"/>
+    <use href="#mstarW" class="t1 d1" transform="translate(498,214) scale(.4)"/>
+    <use href="#mstar"  class="t2 d3" transform="translate(646,300) scale(.55)"/>
+    <use href="#mstarB" class="t3 d5" transform="translate(560,318) scale(.38)"/>
+    <use href="#mstar"  class="t1 d2" transform="translate(736,296) scale(.5)"/>
+    <use href="#mstarW" class="t2 d6" transform="translate(776,246) scale(.44)"/>
+    <use href="#mstar"  class="t3 d1" transform="translate(826,186) scale(.58)"/>
+    <use href="#mstarB" class="t1 d3" transform="translate(858,254) scale(.4)"/>
+    <use href="#mstar"  class="t2 d4" transform="translate(842,428) scale(.46)"/>
+    <use href="#mstar"  class="t3 d5" transform="translate(624,432) scale(.42)"/>
+    <use href="#mstarB" class="t1 d6" transform="translate(504,392) scale(.4)"/>
+    <use href="#mstar"  class="t2 d2" transform="translate(122,64)  scale(.4)"/>
+    <use href="#mstarW" class="t3 d4" transform="translate(306,50)  scale(.46)"/>
+    <use href="#mstar"  class="t1 d1" transform="translate(408,66)  scale(.36)"/>
+    <use href="#mstar"  class="t2 d5" transform="translate(214,424) scale(.4)"/>
+    <use href="#mstarB" class="t3 d3" transform="translate(58,296)  scale(.36)"/>
+    <use href="#mstar"  class="t1 d4" transform="translate(470,330) scale(.4)"/>
+    <use href="#mstar"  class="t2 d1" transform="translate(688,332) scale(.36)"/>
+    <use href="#mstarW" class="t3 d6" transform="translate(796,318) scale(.4)"/>
+    <use href="#mstar"  class="t1 d5" transform="translate(548,64)  scale(.34)"/>
+    <use href="#mstarB" class="t2 d3" transform="translate(884,96)  scale(.4)"/>
+    <use href="#mstar"  class="t3 d2" transform="translate(590,404) scale(.36)"/>
+  </g>
+
+  <!-- Cassiopeia -->
+  <g stroke="#9A90D8" stroke-opacity=".18" stroke-width="1">
+    <path d="M440,72 L484,94 L528,58 L572,86 L612,50"/>
+  </g>
+  <g>
+    <use href="#mstar"  class="t1"    transform="translate(440,72) scale(.7)"/>
+    <use href="#mstarW" class="t2 d2" transform="translate(484,94) scale(.62)"/>
+    <use href="#mstar"  class="t3 d4" transform="translate(528,58) scale(.78)"/>
+    <use href="#mstar"  class="t1 d1" transform="translate(572,86) scale(.6)"/>
+    <use href="#mstarB" class="t2 d3" transform="translate(612,50) scale(.68)"/>
+  </g>
+
+  <!-- Ursa Minor, ending at Polaris -->
+  <g stroke="#9A90D8" stroke-opacity=".18" stroke-width="1">
+    <path d="M856,340 L818,362 L782,378 L748,388 L716,412 L672,406 L702,378 L748,388"/>
+  </g>
+  <g>
+    <use href="#mstarB" class="t2 d1" transform="translate(818,362) scale(.55)"/>
+    <use href="#mstar"  class="t3 d3" transform="translate(782,378) scale(.5)"/>
+    <use href="#mstar"  class="t1 d5" transform="translate(748,388) scale(.62)"/>
+    <use href="#mstarW" class="t2 d2" transform="translate(716,412) scale(.5)"/>
+    <use href="#mstar"  class="t3 d6" transform="translate(672,406) scale(.55)"/>
+    <use href="#mstar"  class="t1 d4" transform="translate(702,378) scale(.46)"/>
+  </g>
+  <use href="#bstar" class="t3" transform="translate(856,340) scale(.9)"/>
+
+  <use href="#bstar" class="t1 d2" transform="translate(520,196) scale(.62)"/>
+  <use href="#bstar" class="t2 d5" transform="translate(864,140) scale(.5)"/>
+
+  <!-- meteors -->
+  <g class="meteor" opacity="0">
+    <rect x="336" y="30" width="56" height="1.4" rx=".7" fill="url(#trail)" transform="rotate(28 392 31)"/>
+    <circle cx="392" cy="31" r="1.6" fill="#FFFFFF" transform="rotate(28 392 31)"/>
+  </g>
+  <g class="meteor2" opacity="0">
+    <rect x="540" y="330" width="44" height="1.2" rx=".6" fill="url(#trail)" transform="rotate(24 584 331)"/>
+    <circle cx="584" cy="331" r="1.3" fill="#FFFFFF" transform="rotate(24 584 331)"/>
+  </g>
+
+  <!-- total solar eclipse -->
+  <g class="eclipse">
+    <!-- outer corona and streamers, uneven like the real thing -->
+    <circle class="corona" cx="708" cy="132" r="86" fill="url(#coronaG)" filter="url(#mist)"/>
+    <g class="corona" style="animation-delay:2s">
+      <ellipse cx="708" cy="132" rx="150" ry="16" fill="url(#coronaG)" filter="url(#mist)" transform="rotate(-9 708 132)"/>
+      <ellipse cx="708" cy="132" rx="122" ry="26" fill="url(#coronaG)" filter="url(#mist)" transform="rotate(-14 708 132)"/>
+      <ellipse cx="708" cy="132" rx="104" ry="22" fill="url(#coronaG)" filter="url(#mist)" transform="rotate(34 708 132)"/>
+      <ellipse cx="708" cy="132" rx="92" ry="20" fill="url(#coronaG)" filter="url(#mist)" transform="rotate(78 708 132)"/>
+      <ellipse cx="708" cy="132" rx="134" ry="12" fill="url(#coronaG)" filter="url(#mist)" transform="rotate(168 708 132)"/>
+    </g>
+    <!-- inner corona, brighter and tighter -->
+    <circle cx="708" cy="132" r="62" fill="url(#coronaG)" filter="url(#mist)" opacity=".8"/>
+    <!-- intense brightness right at the limb, falling off fast -->
+    <circle cx="708" cy="132" r="55" fill="#FFFFFF" filter="url(#mist)" opacity=".5"/>
+    <!-- fine radial corona structure -->
+    <g class="corona" style="animation-delay:4s" fill="#FFFFFF" fill-opacity=".09" filter="url(#soft)">
+      <use href="#rayL" transform="translate(708,132) rotate(-8)"/>
+      <use href="#rayL" transform="translate(708,132) rotate(7)"/>
+      <use href="#rayL" transform="translate(708,132) rotate(174)"/>
+      <use href="#rayL" transform="translate(708,132) rotate(189)"/>
+      <use href="#rayM" transform="translate(708,132) rotate(-22)"/>
+      <use href="#rayM" transform="translate(708,132) rotate(38)"/>
+      <use href="#rayM" transform="translate(708,132) rotate(148)"/>
+      <use href="#rayM" transform="translate(708,132) rotate(212)"/>
+      <use href="#rayS" transform="translate(708,132) rotate(78)"/>
+      <use href="#rayS" transform="translate(708,132) rotate(101)"/>
+      <use href="#rayS" transform="translate(708,132) rotate(258)"/>
+      <use href="#rayS" transform="translate(708,132) rotate(282)"/>
+    </g>
+    <!-- chromosphere ring, brightest toward the diamond ring -->
+    <circle cx="708" cy="132" r="53" stroke="url(#ringGrad)" stroke-width="2.5" filter="url(#soft)"/>
+    <!-- pink solar prominences peeking past the rim -->
+    <g filter="url(#soft)">
+      <circle class="t2 d3" cx="667.8" cy="165.7" r="2.2" fill="#FF6B9B" opacity=".8"/>
+      <circle class="t3 d1" cx="757.3" cy="150.0" r="1.7" fill="#F472B6" opacity=".75"/>
+      <circle class="t1 d5" cx="734.3" cy="86.5"  r="1.9" fill="#FF6B9B" opacity=".8"/>
+    </g>
+    <!-- Baily's beads flickering near the diamond ring -->
+    <circle class="t1"    cx="664.5" cy="102.6" r="1.1" fill="#FFFFFF" filter="url(#soft)"/>
+    <circle class="t3 d4" cx="681.8" cy="86.5"  r="1"   fill="#FFFFFF" filter="url(#soft)"/>
+    <!-- the sun itself, hidden behind the moon until hover reveals it -->
+    <circle class="sunGlow" cx="708" cy="132" r="82" fill="url(#coronaG)" filter="url(#mist)"/>
+    <circle cx="708" cy="132" r="50" fill="url(#sunG)"/>
+    <!-- moon with faint earthshine detail -->
+    <g class="moon">
+      <g class="moonShift">
+        <circle cx="708" cy="132" r="52" fill="#080612"/>
+        <circle cx="708" cy="132" r="48" fill="url(#earthshine)"/>
+        <circle cx="708" cy="132" r="51" stroke="#FFFFFF" stroke-opacity=".3" stroke-width=".7"
+                stroke-dasharray="62 258" transform="rotate(-150 708 132)"/>
+      </g>
+    </g>
+    <!-- diamond ring: warm flare plus star point -->
+    <g class="glintWrap">
+      <circle class="glint" cx="672" cy="94" r="22" fill="url(#glintFlare)" filter="url(#soft)"/>
+      <use href="#bstar" class="glint" transform="translate(672,94) scale(.7)"/>
+    </g>
+  </g>
+
+  <!-- far away, adrift: a spaceman reaching for the little one slipping from his hand -->
+  <g class="dad" transform="translate(585,236) rotate(-6)"><use href="#spaceman"/></g>
+  <g class="baby" transform="translate(621,207) rotate(10)"><use href="#spacebaby"/></g>
+
+  <!-- photographic finish -->
+  <rect x="1.5" y="1.5" width="897" height="457" rx="22" fill="url(#vignette)"/>
+
+  <g class="base">
+    <g class="rise">
+      <text x="64" y="118" font-size="38" font-weight="650" fill="url(#nameGrad)" letter-spacing=".5">Qays Sarayra</text>
+      <text x="64" y="152" font-size="15" font-weight="600" fill="#A855F7" letter-spacing="4">SECURITY ENGINEER</text>
+      <rect x="64" y="169.5" width="266" height="2" rx="1" fill="url(#line)" opacity=".55"/>
+      <rect class="lsweep" x="64" y="168.8" width="70" height="3.4" rx="1.7" fill="url(#lineSpark)"/>
+    </g>
+
+    <g class="rise r2" font-size="14" fill="#B9B3D9">
+      <text x="64" y="204">I work in security operations and security engineering.</text>
+      <text x="64" y="224">I build detection and response workflows, harden cloud</text>
+      <text x="64" y="244">environments, and care about doing the fundamentals well.</text>
+    </g>
+
+    <g class="rise r3">
+      <g fill="#1D1740" stroke="#3C3489" stroke-width="1">
+        <rect x="64"  y="270" width="46" height="26" rx="13"/>
+        <rect x="120" y="270" width="52" height="26" rx="13"/>
+        <rect x="182" y="270" width="46" height="26" rx="13"/>
+        <rect x="238" y="270" width="46" height="26" rx="13"/>
+        <rect x="294" y="270" width="60" height="26" rx="13"/>
+        <rect x="364" y="270" width="66" height="26" rx="13"/>
+        <rect x="64"  y="306" width="68" height="26" rx="13"/>
+        <rect x="142" y="306" width="50" height="26" rx="13"/>
+        <rect x="202" y="306" width="58" height="26" rx="13"/>
+        <rect x="270" y="306" width="56" height="26" rx="13"/>
+        <rect x="336" y="306" width="64" height="26" rx="13"/>
+        <rect x="410" y="306" width="52" height="26" rx="13"/>
+      </g>
+      <g font-size="12" font-weight="500" fill="#CEC8F2" text-anchor="middle">
+        <text x="87"  y="287">SOC</text>
+        <text x="146" y="287">SIEM</text>
+        <text x="205" y="287">EDR</text>
+        <text x="261" y="287">ELK</text>
+        <text x="324" y="287">Wazuh</text>
+        <text x="397" y="287">Splunk</text>
+        <text x="98"  y="323">QRadar</text>
+        <text x="167" y="323">WAF</text>
+        <text x="231" y="323">Azure</text>
+        <text x="298" y="323">Linux</text>
+        <text x="368" y="323">Python</text>
+        <text x="436" y="323">Bash</text>
+      </g>
+      <!-- silver shine sweeping across the skill cards -->
+      <g clip-path="url(#chipsClip)">
+        <rect class="csweep" x="-160" y="262" width="110" height="80" fill="url(#silver)"/>
+      </g>
+    </g>
+
+    <g class="rise r4">
+      <use href="#bstar" class="t1" transform="translate(74,364) scale(.5)"/>
+      <text x="92" y="369" font-size="14" font-style="italic" fill="#CEC8F2">Still learning, every day.</text>
+    </g>
+
+    <g class="rise r5" font-size="13" fill="#8F86D8">
+      <circle cx="69" cy="401" r="2.5" fill="#A855F7"/>
+      <text x="82" y="406">qayssarayra.com</text>
+      <circle cx="209" cy="401" r="2.5" fill="#7F77DD"/>
+      <text x="222" y="406">linkedin.com/in/qays-sarayra</text>
+    </g>
+  </g>
+</svg>
