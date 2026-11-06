@@ -26,13 +26,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/cards.py ${{ github.repository_owner }} dist - card.svg
 
-      - uses: Platane/snk@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-snake.svg?color_snake=#7A16C9&color_dots=#EBEDF0,#E9D5FF,#C084FC,#9333EA,#6B21A8
-            dist/github-snake-dark.svg?palette=github-dark&color_snake=#F3EBDD&color_dots=#161026,#3B1A63,#5B21B6,#7A16C9,#C084FC
-
       - uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
