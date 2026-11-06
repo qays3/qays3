@@ -12,18 +12,14 @@
 
 <h3>Daily Activity</h3>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=qays3&bg_color=0B0716&color=CEC8F2&line=A855F7&point=F3EBDD&area=true&area_color=7A16C9&title_color=A855F7&hide_border=true&radius=16&custom_title=Daily%20Activity" width="100%" alt="Daily contribution activity graph" />
+<img src="https://raw.githubusercontent.com/qays3/qays3/output/activity.svg" width="100%" alt="Daily contribution activity graph" />
 
 <h3>Stats</h3>
 
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=qays3&show_icons=true&hide_border=true&bg_color=00000000&title_color=A855F7&icon_color=C084FC&text_color=CEC8F2&ring_color=A855F7&rank_icon=github&include_all_commits=true" alt="GitHub stats" />
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=qays3&layout=compact&hide_border=true&bg_color=00000000&title_color=A855F7&text_color=CEC8F2&langs_count=8" alt="Top languages" />
+<img width="49%" src="https://raw.githubusercontent.com/qays3/qays3/output/stats.svg" alt="GitHub stats" />
+<img width="49%" src="https://raw.githubusercontent.com/qays3/qays3/output/langs.svg" alt="Top languages" />
 
 <img src="https://github-readme-streak-stats.herokuapp.com?user=qays3&theme=transparent&hide_border=true&ring=A855F7&fire=C084FC&currStreakLabel=A855F7&sideLabels=8F86D8&currStreakNum=CEC8F2&sideNums=CEC8F2&dates=7F77DD" alt="Total contributions, current streak, and longest streak" />
-
-<h3>Trophies</h3>
-
-<img src="https://github-profile-trophy.vercel.app/?username=qays3&theme=onedark&no-frame=true&no-bg=true&margin-w=8&row=1&column=6" alt="GitHub trophies" />
 
 <h3>Certifications</h3>
 

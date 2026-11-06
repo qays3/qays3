@@ -6,8 +6,9 @@
     @keyframes tw2 { 0%,100% { opacity:.3 } 50% { opacity:.9 } }
     @keyframes tw3 { 0%,100% { opacity:.55 } 50% { opacity:1 } }
     @keyframes sparkle { 0%,100% { opacity:.5; transform: scale(.7) rotate(0deg) } 50% { opacity:1; transform: scale(1.1) rotate(45deg) } }
-    @keyframes glowBreathe { 0%,100% { opacity:.45 } 50% { opacity:.85 } }
-    @keyframes moonFloat { 0%,100% { transform: translate(0,0) } 50% { transform: translate(-3px,4px) } }
+    @keyframes glowBreathe { 0%,100% { opacity:.35; transform: scale(.9) } 50% { opacity:1; transform: scale(1.12) } }
+    @keyframes blink { 0%,49% { opacity:1 } 50%,100% { opacity:0 } }
+    @keyframes moonFloat { 0%,100% { transform: translate(0,0) } 50% { transform: translate(-8px,10px) } }
     @keyframes rise { from { opacity:0; transform: translateY(12px) } to { opacity:1; transform: translateY(0) } }
     @keyframes lineSweep {
       0%   { opacity:0; transform: translateX(0) }
@@ -15,19 +16,6 @@
       70%  { opacity:1 }
       85%  { opacity:0; transform: translateX(196px) }
       100% { opacity:0; transform: translateX(196px) }
-    }
-    @keyframes chipSweep {
-      0%   { transform: skewX(-20deg) translateX(0) }
-      55%  { transform: skewX(-20deg) translateX(780px) }
-      100% { transform: skewX(-20deg) translateX(780px) }
-    }
-    @keyframes floatDad {
-      0%,100% { transform: translate(588px,384px) rotate(-6deg) }
-      50%     { transform: translate(584px,388px) rotate(4deg) }
-    }
-    @keyframes floatBaby {
-      0%,100% { transform: translate(626px,354px) rotate(10deg) }
-      50%     { transform: translate(636px,344px) rotate(-8deg) }
     }
     @keyframes meteor {
       0%   { opacity:0; transform: translate(0,0) }
@@ -40,13 +28,11 @@
     .t2 { animation: tw2 5.6s ease-in-out infinite }
     .t3 { animation: tw3 7.1s ease-in-out infinite }
     .spk { transform-box: fill-box; transform-origin: center; animation: sparkle 5s ease-in-out infinite }
-    .glow { animation: glowBreathe 8s ease-in-out infinite }
-    .moon { animation: moonFloat 14s ease-in-out infinite }
+    .glow { transform-box: fill-box; transform-origin: center; animation: glowBreathe 5s ease-in-out infinite }
+    .caret { animation: blink 1s step-end infinite }
+    .moon { animation: moonFloat 9s ease-in-out infinite }
     .rise { animation: rise .9s ease both }
     .lsweep { animation: lineSweep 3.4s ease-in-out infinite; animation-delay: 1s }
-    .csweep { animation: chipSweep 5.5s ease-in-out infinite; animation-delay: 1.6s }
-    .dad  { animation: floatDad 16s ease-in-out infinite }
-    .baby { animation: floatBaby 12s ease-in-out infinite }
     .meteor  { animation: meteor 14s linear infinite }
     .meteor2 { animation: meteor 19s linear infinite; animation-delay: 8s }
 
@@ -136,91 +122,55 @@
 
     <g id="diskOuter" stroke-linecap="round">
       <ellipse rx="152" ry="54" stroke="#7A16C9" stroke-width="8" pathLength="1000" stroke-dasharray="180 70 120 130">
-        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="19s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="13s" repeatCount="indefinite"/>
       </ellipse>
       <ellipse rx="176" ry="62" stroke="#8B2BE0" stroke-width="4" pathLength="1000" stroke-dasharray="60 120 140 180">
-        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="23s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="16s" repeatCount="indefinite"/>
       </ellipse>
       <ellipse rx="204" ry="72" stroke="#F3EBDD" stroke-width="2.5" pathLength="1000" stroke-dasharray="40 160 90 210" opacity=".85">
-        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="28s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="19s" repeatCount="indefinite"/>
       </ellipse>
       <ellipse cx="-10" cy="6" rx="232" ry="86" stroke="#7A16C9" stroke-width="3.5" pathLength="1000" stroke-dasharray="120 260 40 80" opacity=".75">
-        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="34s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="23s" repeatCount="indefinite"/>
       </ellipse>
       <ellipse cx="-20" cy="10" rx="258" ry="98" stroke="#7A16C9" stroke-width="2" pathLength="1000" stroke-dasharray="70 300 30 100" opacity=".5">
-        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="41s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="28s" repeatCount="indefinite"/>
       </ellipse>
     </g>
 
     <g id="diskInner" stroke-linecap="round">
       <ellipse rx="70" ry="24" stroke="#F3EBDD" stroke-width="7" pathLength="1000" stroke-dasharray="120 30 60 40">
-        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="7s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="5s" repeatCount="indefinite"/>
       </ellipse>
       <ellipse rx="84" ry="29" stroke="#9333EA" stroke-width="5" pathLength="1000" stroke-dasharray="70 40 50 40">
-        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="9s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="6.5s" repeatCount="indefinite"/>
       </ellipse>
       <ellipse rx="98" ry="34" stroke="#F3EBDD" stroke-width="9" pathLength="1000" stroke-dasharray="160 25 40 25">
-        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="11s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="8s" repeatCount="indefinite"/>
       </ellipse>
       <ellipse rx="98" ry="34" stroke="#0B0716" stroke-width="1.3" pathLength="1000" stroke-dasharray="9 21" opacity=".7">
-        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="11s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="8s" repeatCount="indefinite"/>
       </ellipse>
       <ellipse rx="114" ry="40" stroke="#7A16C9" stroke-width="6" pathLength="1000" stroke-dasharray="90 50 30 30">
-        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="13s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="9.5s" repeatCount="indefinite"/>
       </ellipse>
       <ellipse rx="132" ry="47" stroke="#F3EBDD" stroke-width="4.5" pathLength="1000" stroke-dasharray="60 60 100 30">
-        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="16s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="11s" repeatCount="indefinite"/>
       </ellipse>
       <ellipse rx="132" ry="47" stroke="#0B0716" stroke-width="1" pathLength="1000" stroke-dasharray="6 19" opacity=".6">
-        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="16s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-dashoffset" values="0;-1000" dur="11s" repeatCount="indefinite"/>
       </ellipse>
     </g>
 
     <clipPath id="frontHalf"><rect x="-320" y="3" width="640" height="220"/></clipPath>
     <clipPath id="moonClip"><circle cx="0" cy="0" r="34"/></clipPath>
 
-    <g id="spaceman">
-      <path d="M-7,3 C-15,8 -11,16 -19,20" stroke="#5B3A9A" stroke-width=".8" opacity=".7"/>
-      <rect x="-8" y="-7" width="5" height="10" rx="1.5" fill="#140C26"/>
-      <path d="M-2,5.5 L-5,12" stroke="#22163F" stroke-width="2.6" stroke-linecap="round"/>
-      <path d="M2,5.5 L3.5,12.5" stroke="#22163F" stroke-width="2.6" stroke-linecap="round"/>
-      <path d="M-3.5,-3 L-7,2" stroke="#22163F" stroke-width="2.2" stroke-linecap="round"/>
-      <rect x="-4" y="-8" width="8" height="14" rx="4" fill="#22163F"/>
-      <path d="M3,-5 L11,-11" stroke="#22163F" stroke-width="2.2" stroke-linecap="round"/>
-      <circle cx="11" cy="-11" r="1.2" fill="#22163F"/>
-      <circle cx="0" cy="-11.5" r="5" fill="#22163F"/>
-      <circle cx="1.4" cy="-12" r="2.4" fill="#0B0716"/>
-      <circle cx="2.2" cy="-12.8" r=".6" fill="#F3EBDD" opacity=".9"/>
-      <circle cx="0" cy="-11.5" r="5" stroke="#F3EBDD" stroke-width=".8" stroke-dasharray="8 24" transform="rotate(-52 0 -11.5)" opacity=".85"/>
-      <path d="M4,-6 C4.6,-2 4.4,2 3.6,5" stroke="#C084FC" stroke-width=".8" opacity=".7"/>
-      <path d="M3.2,-5.6 L10.8,-11.4" stroke="#E9D5FF" stroke-width=".7" opacity=".8"/>
-    </g>
-    <g id="spacebaby">
-      <path d="M-1.8,0 L-4.6,2.2" stroke="#22163F" stroke-width="1.4" stroke-linecap="round"/>
-      <path d="M-1,1.2 L-3.8,3.6" stroke="#22163F" stroke-width="1.4" stroke-linecap="round"/>
-      <path d="M-.6,3.6 L-1.6,6" stroke="#22163F" stroke-width="1.5" stroke-linecap="round"/>
-      <path d="M1,3.6 L2,5.8" stroke="#22163F" stroke-width="1.5" stroke-linecap="round"/>
-      <rect x="-2" y="-1.6" width="4" height="5.4" rx="2" fill="#22163F"/>
-      <circle cx="0" cy="-4" r="2.6" fill="#22163F"/>
-      <circle cx="-.8" cy="-4.2" r="1.2" fill="#0B0716"/>
-      <circle cx="0" cy="-4" r="2.6" stroke="#F3EBDD" stroke-width=".6" stroke-dasharray="5 12" transform="rotate(-45 0 -4)" opacity=".85"/>
-      <path d="M2,-1.2 L2,2.6" stroke="#C084FC" stroke-width=".7" opacity=".8"/>
-    </g>
 
-    <clipPath id="chipsClip">
-      <rect x="64"  y="270" width="46" height="26" rx="13"/>
-      <rect x="120" y="270" width="52" height="26" rx="13"/>
-      <rect x="182" y="270" width="46" height="26" rx="13"/>
-      <rect x="238" y="270" width="46" height="26" rx="13"/>
-      <rect x="294" y="270" width="60" height="26" rx="13"/>
-      <rect x="364" y="270" width="66" height="26" rx="13"/>
-      <rect x="64"  y="306" width="68" height="26" rx="13"/>
-      <rect x="142" y="306" width="50" height="26" rx="13"/>
-      <rect x="202" y="306" width="58" height="26" rx="13"/>
-      <rect x="270" y="306" width="56" height="26" rx="13"/>
-      <rect x="336" y="306" width="64" height="26" rx="13"/>
-      <rect x="410" y="306" width="52" height="26" rx="13"/>
-    </clipPath>
+    <clipPath id="type1"><rect x="60" y="210" width="0" height="30"><animate attributeName="width" from="0" to="520" begin="1s" dur="1.6s" fill="freeze"/></rect></clipPath>
+    <clipPath id="type2"><rect x="60" y="230" width="0" height="30"><animate attributeName="width" from="0" to="520" begin="2.6s" dur="1.4s" fill="freeze"/></rect></clipPath>
+    <clipPath id="type3"><rect x="60" y="250" width="0" height="30"><animate attributeName="width" from="0" to="520" begin="4s" dur="1.6s" fill="freeze"/></rect></clipPath>
+    <clipPath id="type4"><rect x="60" y="270" width="0" height="30"><animate attributeName="width" from="0" to="520" begin="5.6s" dur="1.6s" fill="freeze"/></rect></clipPath>
+    <path id="orbit" d="M740,222 m-250,0 a250,92 -12 1,0 500,0 a250,92 -12 1,0 -500,0"/>
   </defs>
 
   <rect x="1.5" y="1.5" width="897" height="457" rx="22" fill="url(#bg)"/>
@@ -304,8 +254,10 @@
       <g filter="url(#brush)" clip-path="url(#frontHalf)"><use href="#diskInner"/></g>
     </g>
 
-    <g class="dad" transform="translate(588,384) rotate(-6)"><use href="#spaceman"/></g>
-    <g class="baby" transform="translate(626,354) rotate(10)"><use href="#spacebaby"/></g>
+    <g>
+      <circle r="2.2" fill="#F3EBDD"><animateMotion dur="14s" repeatCount="indefinite" rotate="auto"><mpath href="#orbit"/></animateMotion></circle>
+      <rect x="-26" y="-.8" width="26" height="1.6" rx=".8" fill="url(#trail)"><animateMotion dur="14s" repeatCount="indefinite" rotate="auto"><mpath href="#orbit"/></animateMotion></rect>
+    </g>
 
     <rect x="1.5" y="1.5" width="897" height="457" fill="url(#vignette)"/>
   </g>
@@ -314,62 +266,39 @@
 
   <g class="base">
     <g class="rise">
-      <text x="64" y="118" font-size="38" font-weight="650" fill="url(#nameGrad)" letter-spacing=".5">Qays Sarayra</text>
-      <text x="64" y="152" font-size="15" font-weight="600" fill="#A855F7" letter-spacing="4">SECURITY ENGINEER</text>
-      <rect x="64" y="169.5" width="266" height="2" rx="1" fill="url(#line)" opacity=".55"/>
-      <rect class="lsweep" x="64" y="168.8" width="70" height="3.4" rx="1.7" fill="url(#lineSpark)"/>
+      <text x="64" y="143" font-size="38" font-weight="650" fill="url(#nameGrad)" letter-spacing=".5">Qays Sarayra</text>
+      <text x="64" y="177" font-size="15" font-weight="600" fill="#A855F7" letter-spacing="4">SECURITY ENGINEER</text>
+      <rect x="64" y="194.5" width="266" height="2" rx="1" fill="url(#line)" opacity=".55"/>
+      <rect class="lsweep" x="64" y="193.8" width="70" height="3.4" rx="1.7" fill="url(#lineSpark)"/>
     </g>
 
-    <g class="rise r2" font-size="14" fill="#B9B3D9">
-      <text x="64" y="204">I work in security operations and security engineering.</text>
-      <text x="64" y="224">I build detection and response workflows, harden cloud</text>
-      <text x="64" y="244">environments, and care about doing the fundamentals well.</text>
-    </g>
-
-    <g class="rise r3">
-      <g fill="#1A0F33" stroke="#4C2A8A" stroke-width="1">
-        <rect x="64"  y="270" width="46" height="26" rx="13"/>
-        <rect x="120" y="270" width="52" height="26" rx="13"/>
-        <rect x="182" y="270" width="46" height="26" rx="13"/>
-        <rect x="238" y="270" width="46" height="26" rx="13"/>
-        <rect x="294" y="270" width="60" height="26" rx="13"/>
-        <rect x="364" y="270" width="66" height="26" rx="13"/>
-        <rect x="64"  y="306" width="68" height="26" rx="13"/>
-        <rect x="142" y="306" width="50" height="26" rx="13"/>
-        <rect x="202" y="306" width="58" height="26" rx="13"/>
-        <rect x="270" y="306" width="56" height="26" rx="13"/>
-        <rect x="336" y="306" width="64" height="26" rx="13"/>
-        <rect x="410" y="306" width="52" height="26" rx="13"/>
-      </g>
-      <g font-size="12" font-weight="500" fill="#E4DCF7" text-anchor="middle">
-        <text x="87"  y="287">SOC</text>
-        <text x="146" y="287">SIEM</text>
-        <text x="205" y="287">EDR</text>
-        <text x="261" y="287">ELK</text>
-        <text x="324" y="287">Wazuh</text>
-        <text x="397" y="287">Splunk</text>
-        <text x="98"  y="323">QRadar</text>
-        <text x="167" y="323">WAF</text>
-        <text x="231" y="323">Azure</text>
-        <text x="298" y="323">Linux</text>
-        <text x="368" y="323">Python</text>
-        <text x="436" y="323">Bash</text>
-      </g>
-      <g clip-path="url(#chipsClip)">
-        <rect class="csweep" x="-160" y="262" width="110" height="80" fill="url(#silver)"/>
-      </g>
+    <g font-size="14" fill="#B9B3D9">
+      <text x="64" y="230" clip-path="url(#type1)">I work in security operations and security engineering,</text>
+      <text x="64" y="250" clip-path="url(#type2)">and I enjoy developing security solutions.</text>
+      <text x="64" y="270" clip-path="url(#type3)">I build detection and response workflows, harden cloud</text>
+      <text x="64" y="290" clip-path="url(#type4)">environments, and care about doing the fundamentals well.</text>
+      <rect class="caret" x="64" y="217" width="7" height="15" rx="1" fill="#A855F7">
+        <animate attributeName="x" values="64;450" keyTimes="0;1" begin="1s" dur="1.6s" fill="freeze"/>
+        <set attributeName="x" to="64" begin="2.6s"/>
+        <set attributeName="y" to="237" begin="2.6s"/>
+        <animate attributeName="x" values="64;350" begin="2.6s" dur="1.4s" fill="freeze"/>
+        <set attributeName="y" to="257" begin="4s"/>
+        <animate attributeName="x" values="64;445" begin="4s" dur="1.6s" fill="freeze"/>
+        <set attributeName="y" to="277" begin="5.6s"/>
+        <animate attributeName="x" values="64;462" begin="5.6s" dur="1.6s" fill="freeze"/>
+      </rect>
     </g>
 
     <g class="rise r4">
-      <g transform="translate(74,364) scale(.55)"><use href="#spark4" class="spk"/></g>
-      <text x="92" y="369" font-size="14" font-style="italic" fill="#E4DCF7">Still learning, every day.</text>
+      <g transform="translate(74,331) scale(.55)"><use href="#spark4" class="spk"/></g>
+      <text x="92" y="336" font-size="14" font-style="italic" fill="#E4DCF7">Still learning, every day.</text>
     </g>
 
     <g class="rise r5" font-size="13" fill="#A99FE0">
-      <circle cx="69" cy="401" r="2.5" fill="#A855F7"/>
-      <text x="82" y="406">qayssarayra.com</text>
-      <circle cx="209" cy="401" r="2.5" fill="#F3EBDD"/>
-      <text x="222" y="406">linkedin.com/in/qays-sarayra</text>
+      <circle cx="69" cy="371" r="2.5" fill="#A855F7"/>
+      <text x="82" y="376">qayssarayra.com</text>
+      <circle cx="209" cy="371" r="2.5" fill="#F3EBDD"/>
+      <text x="222" y="376">linkedin.com/in/qays-sarayra</text>
     </g>
   </g>
 </svg>
