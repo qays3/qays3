@@ -38,10 +38,5 @@
 
 <img src="https://raw.githubusercontent.com/qays3/qays3/output/blackhole.svg" width="100%" alt="My contribution graph falling into a black hole" />
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qays3/qays3/output/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/qays3/qays3/output/github-snake.svg" />
-  <img src="https://raw.githubusercontent.com/qays3/qays3/output/github-snake-dark.svg" alt="Snake eating my contribution graph" />
-</picture>
 
 </div>
