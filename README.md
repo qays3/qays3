@@ -34,7 +34,9 @@
 <img src="https://img.shields.io/badge/CompTIA-CSAP-7A16C9?style=flat-square&labelColor=0B0716" alt="CompTIA CSAP" />
 <img src="https://img.shields.io/badge/CompTIA-Security%2B-7A16C9?style=flat-square&labelColor=0B0716" alt="CompTIA Security+" />
 
-<br/><br/>
+<h3>Event Horizon</h3>
+
+<img src="https://raw.githubusercontent.com/qays3/qays3/output/blackhole.svg" width="100%" alt="My contribution graph falling into a black hole" />
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/qays3/qays3/output/github-snake-dark.svg" />

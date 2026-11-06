@@ -1,4 +1,5 @@
 import json
+import math
 import os
 import sys
 import urllib.request
@@ -208,17 +209,110 @@ def activity_card(u, days=31):
     return frame(w, h, "Daily Activity", "\n".join(out))
 
 
+def blackhole_card(u, card_path=None):
+    import re
+    weeks = u["contributionsCollection"]["contributionCalendar"]["weeks"]
+    w, h = 900, 212
+    cell, gap = 9.6, 2.3
+    pitch = cell + gap
+    gx, gy = 22, 96
+    img_w = 250
+    img_h = img_w * 570 / 940
+    img_x, img_y = 640, 46
+    hx, hy = img_x + img_w * .649, img_y + img_h * .502
+    counts = sorted(d["contributionCount"] for wk in weeks for d in wk["contributionDays"] if d["contributionCount"] > 0)
+    def level(c):
+        if c == 0 or not counts:
+            return 0
+        q = [counts[int(len(counts) * f)] for f in (.25, .5, .75)]
+        return 1 + sum(c > t for t in q)
+    shades = ["#161026", "#3B1A63", "#5B21B6", "#7A16C9", "#C084FC"]
+    T = 14.0
+    art = ""
+    if card_path and os.path.exists(card_path):
+        m = re.search(r'<image href="(data:image/png;base64,[^"]+)" x="450"', open(card_path).read())
+        if m:
+            art = m.group(1)
+    out = [
+        f'<defs><radialGradient id="hg" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#9333EA" stop-opacity=".55"/><stop offset="1" stop-color="#7A16C9" stop-opacity="0"/></radialGradient>'
+        f'<filter id="bl" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="9"/></filter></defs>',
+        f'<circle class="pulse" cx="{hx:.1f}" cy="{hy:.1f}" r="80" fill="url(#hg)" filter="url(#bl)"/>',
+    ]
+    statics = []
+    movers = []
+    maxd = 0
+    cells = []
+    for wi, wk in enumerate(weeks):
+        for d in wk["contributionDays"]:
+            di = date.fromisoformat(d["date"]).weekday()
+            row = (di + 1) % 7
+            x = gx + wi * pitch + cell / 2
+            y = gy + row * pitch + cell / 2
+            lv = level(d["contributionCount"])
+            dist = math.hypot(hx - x, hy - y)
+            maxd = max(maxd, dist)
+            cells.append((x, y, lv, dist, d))
+    for x, y, lv, dist, d in cells:
+        statics.append(f'<rect x="{x - cell/2:.1f}" y="{y - cell/2:.1f}" width="{cell}" height="{cell}" rx="2" fill="{shades[0]}"/>')
+        if lv == 0:
+            continue
+        a0 = math.atan2(y - hy, x - hx)
+        r0 = dist
+        pts = [(x, y)]
+        n = 10
+        for k in range(1, n + 1):
+            t = k / n
+            r = r0 * (1 - t) ** 1.15
+            a = a0 + 2.2 * math.pi * t ** 3
+            f = 0.38 + 0.62 * (1 - t) ** 0.5
+            dy0 = (y - hy) * (1 - t) ** 1.15
+            px = hx + r * math.cos(a)
+            py = hy + r * math.sin(a) * f * 0.5 + dy0 * 0.5
+            pts.append((px, py))
+        path = "M" + " ".join(f"{px:.0f},{py:.0f}" for px, py in pts)
+        rnd = ((int(x * 7) * 31 + int(y * 13) * 17) % 100) / 100
+        start = 0.4 + 6.0 * dist / maxd + rnd * 0.6
+        travel = 1.5 + rnd * 0.5
+        a = start / T
+        b = (start + travel) / T
+        kt = f"0;{a:.3f};{b:.3f};.86;.861;1"
+        movers.append(
+            f'<rect x="{-cell/2}" y="{-cell/2}" width="{cell}" height="{cell}" rx="2" fill="{shades[lv]}">'
+            f'<animateMotion dur="{T:g}s" repeatCount="indefinite" path="{path}" keyPoints="0;0;1;1;0;0" keyTimes="{kt}" calcMode="linear"/>'
+            f'<animateTransform attributeName="transform" type="scale" additive="sum" dur="{T:g}s" repeatCount="indefinite" values="1;1;0;0;0;1" keyTimes="{kt}"/></rect>'
+        )
+    out.append("<g>" + "".join(statics) + "</g>")
+    hole = f'<ellipse cx="{hx:.1f}" cy="{hy+1:.1f}" rx="{img_w*.12:.1f}" ry="{img_w*.088:.1f}" fill="#040208"/>'
+    if art:
+        hole += (f'<g><animateTransform attributeName="transform" type="rotate" values="-3 {hx:.1f} {hy:.1f};3 {hx:.1f} {hy:.1f};-3 {hx:.1f} {hy:.1f}" dur="10s" repeatCount="indefinite"/>'
+                 f'<image href="{art}" x="{img_x}" y="{img_y}" width="{img_w}" height="{img_h:.1f}"/></g>')
+    else:
+        hole += f'<ellipse cx="{hx:.1f}" cy="{hy:.1f}" rx="70" ry="26" stroke="{CREAM}" stroke-width="5" transform="rotate(-10 {hx:.1f} {hy:.1f})"/>'
+    out.append(hole)
+    out.append("<g>" + "".join(movers) + "</g>")
+    total = u["contributionsCollection"]["contributionCalendar"]["totalContributions"]
+    out.append(f'<text x="26" y="62" font-size="12" fill="{MUTED}">{total} contributions pulled past the event horizon in the last year</text>')
+    return frame(w, h, "Event Horizon", "\n".join(out))
+
+
 def main():
     login = sys.argv[1]
     out_dir = sys.argv[2]
-    src = sys.argv[3] if len(sys.argv) > 3 else None
+    src = sys.argv[3] if len(sys.argv) > 3 and sys.argv[3] != "-" else None
     if src:
         with open(src) as f:
             u = json.load(f)
     else:
         u = fetch(login, os.environ["GITHUB_TOKEN"])
     os.makedirs(out_dir, exist_ok=True)
-    for name, svg in (("stats.svg", stats_card(u)), ("langs.svg", langs_card(u)), ("activity.svg", activity_card(u))):
+    card = sys.argv[4] if len(sys.argv) > 4 else "card.svg"
+    cards = (
+        ("stats.svg", stats_card(u)),
+        ("langs.svg", langs_card(u)),
+        ("activity.svg", activity_card(u)),
+        ("blackhole.svg", blackhole_card(u, card)),
+    )
+    for name, svg in cards:
         with open(os.path.join(out_dir, name), "w") as f:
             f.write(svg)
 
