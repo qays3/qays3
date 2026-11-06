@@ -210,90 +210,179 @@ def activity_card(u, days=31):
 
 
 def blackhole_card(u, card_path=None):
-    import re
     weeks = u["contributionsCollection"]["contributionCalendar"]["weeks"]
-    w, h = 900, 212
+    W, H = 900, 178
     cell, gap = 9.6, 2.3
     pitch = cell + gap
-    gx, gy = 22, 96
-    img_w = 250
-    img_h = img_w * 570 / 940
-    img_x, img_y = 640, 46
-    hx, hy = img_x + img_w * .649, img_y + img_h * .502
+    gx, gy = 22, 74
+    hx, hy = 790.0, 116.0
+    rs = 22.0
+    theta_e = 44.0
+    T = 16.0
     counts = sorted(d["contributionCount"] for wk in weeks for d in wk["contributionDays"] if d["contributionCount"] > 0)
+
     def level(c):
         if c == 0 or not counts:
             return 0
         q = [counts[int(len(counts) * f)] for f in (.25, .5, .75)]
         return 1 + sum(c > t for t in q)
+
     shades = ["#161026", "#3B1A63", "#5B21B6", "#7A16C9", "#C084FC"]
-    T = 14.0
-    art = ""
-    if card_path and os.path.exists(card_path):
-        m = re.search(r'<image href="(data:image/png;base64,[^"]+)" x="450"', open(card_path).read())
-        if m:
-            art = m.group(1)
-    out = [
-        f'<defs><radialGradient id="hg" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#9333EA" stop-opacity=".55"/><stop offset="1" stop-color="#7A16C9" stop-opacity="0"/></radialGradient>'
-        f'<filter id="bl" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="9"/></filter></defs>',
-        f'<circle class="pulse" cx="{hx:.1f}" cy="{hy:.1f}" r="80" fill="url(#hg)" filter="url(#bl)"/>',
-    ]
+    red = (225, 29, 72)
+
+    def rgb(hx_):
+        return tuple(int(hx_[k:k + 2], 16) for k in (1, 3, 5))
+
+    def mix(c1, c2, t):
+        return "#%02X%02X%02X" % tuple(round(a + (b - a) * t) for a, b in zip(c1, c2))
+
+    def lens(x, y):
+        dx, dy = x - hx, y - hy
+        d = math.hypot(dx, dy) or 1e-6
+        d2 = (d + math.sqrt(d * d + 4 * theta_e * theta_e)) / 2
+        return hx + dx * d2 / d, hy + dy * d2 / d
+
+    def simulate(x0, y0):
+        gm = 1.0
+        x, y = x0 - hx, y0 - hy
+        r = math.hypot(x, y)
+        vc = math.sqrt(gm / r)
+        vx, vy = -y / r * vc * 0.32, x / r * vc * 0.32
+        dt = 0.02 * r ** 1.5 / 400
+        samples = [(x, y, 0.0, r)]
+        t_obs = 0.0
+        last = 0.0
+        step = None
+        for _ in range(200000):
+            ax, ay = -gm * x / r ** 3, -gm * y / r ** 3
+            vx += ax * dt
+            vy += ay * dt
+            vx *= 0.9995
+            vy *= 0.9995
+            x += vx * dt
+            y += vy * dt
+            r = math.hypot(x, y)
+            dil = 1 / math.sqrt(max(1 - rs / r, 0.04)) if r > rs else 5
+            t_obs += dt * dil
+            samples.append((x, y, t_obs, r))
+            if r <= rs * 1.02:
+                break
+        return samples
+
+    raw = []
     statics = []
-    movers = []
-    maxd = 0
-    cells = []
     for wi, wk in enumerate(weeks):
         for d in wk["contributionDays"]:
-            di = date.fromisoformat(d["date"]).weekday()
-            row = (di + 1) % 7
+            row = (date.fromisoformat(d["date"]).weekday() + 1) % 7
             x = gx + wi * pitch + cell / 2
             y = gy + row * pitch + cell / 2
+            lx, ly = lens(x, y)
+            statics.append(f'<rect x="{lx - cell/2:.1f}" y="{ly - cell/2:.1f}" width="{cell}" height="{cell}" rx="2" fill="{shades[0]}"/>')
             lv = level(d["contributionCount"])
-            dist = math.hypot(hx - x, hy - y)
-            maxd = max(maxd, dist)
-            cells.append((x, y, lv, dist, d))
-    for x, y, lv, dist, d in cells:
-        statics.append(f'<rect x="{x - cell/2:.1f}" y="{y - cell/2:.1f}" width="{cell}" height="{cell}" rx="2" fill="{shades[0]}"/>')
-        if lv == 0:
-            continue
-        a0 = math.atan2(y - hy, x - hx)
-        r0 = dist
-        pts = [(x, y)]
-        n = 10
-        for k in range(1, n + 1):
-            t = k / n
-            r = r0 * (1 - t) ** 1.15
-            a = a0 + 2.2 * math.pi * t ** 3
-            f = 0.38 + 0.62 * (1 - t) ** 0.5
-            dy0 = (y - hy) * (1 - t) ** 1.15
-            px = hx + r * math.cos(a)
-            py = hy + r * math.sin(a) * f * 0.5 + dy0 * 0.5
-            pts.append((px, py))
-        path = "M" + " ".join(f"{px:.0f},{py:.0f}" for px, py in pts)
-        rnd = ((int(x * 7) * 31 + int(y * 13) * 17) % 100) / 100
-        start = 0.4 + 6.0 * dist / maxd + rnd * 0.6
-        travel = 1.5 + rnd * 0.5
-        a = start / T
-        b = (start + travel) / T
-        kt = f"0;{a:.3f};{b:.3f};.86;.861;1"
+            if lv:
+                raw.append((lx, ly, lv))
+
+    sims = [(lx, ly, lv, simulate(lx, ly)) for lx, ly, lv in raw]
+    t_max = max((sm[-1][2] for *_, sm in sims), default=1)
+    scale_t = 9.0 / t_max
+    movers = []
+    for lx, ly, lv, sm in sims:
+        total = sm[-1][2]
+        n = 9
+        picks = []
+        k = 0
+        for m in range(n + 1):
+            target = total * (m / n) ** 0.85
+            while k < len(sm) - 1 and sm[k][2] < target:
+                k += 1
+            picks.append(sm[k])
+        rel = 0.6 + ((int(lx * 7) * 31 + int(ly * 13) * 17) % 100) / 250
+        times = [rel + p[2] * scale_t for p in picks]
+        end = times[-1]
+        pts = [(hx + p[0], hy + p[1]) for p in picks]
+        angs = []
+        prev = None
+        for m in range(len(pts)):
+            a2 = pts[min(m + 1, len(pts) - 1)]
+            a1 = pts[max(m - 1, 0)]
+            ang = math.degrees(math.atan2(a2[1] - a1[1], a2[0] - a1[0]))
+            if prev is not None:
+                while ang - prev > 180:
+                    ang -= 360
+                while ang - prev < -180:
+                    ang += 360
+            angs.append(ang)
+            prev = ang
+        angs[0] = 0 if abs(angs[0]) < 90 else angs[0]
+        stretch = [1 + 2.4 * (rs / p[3]) ** 2 for p in picks]
+        kt = [0.0] + [t / T for t in times] + [0.9, 0.901, 1.0]
+        kts = ";".join(f"{v:.3f}".lstrip("0") or "0" for v in kt)
+        mv = [pts[0]] + pts + [pts[-1], pts[0], pts[0]]
+        mvs = ";".join(f"{a:.0f},{b:.0f}" for a, b in mv)
+        rot = [0.0, 0.0] + angs[1:] + [angs[-1], 0.0, 0.0]
+        rots = ";".join(f"{v:.0f}" for v in rot)
+        sc = ["1 1", "1 1"] + [f"{st:.2f} {max(1 / st, .25):.2f}" for st in stretch[1:-1]] + ["0 0", "0 0", "0 0", "1 1"]
+        scs = ";".join(sc)
+        base = rgb(shades[lv])
+        heat = [min(1, (rs / p[3]) ** 1.2 * 1.6) for p in picks]
+        cols = [shades[lv]] + [mix(base, red, h) for h in heat] + [mix(base, red, 1), shades[lv], shades[lv]]
+        fills = ";".join(cols)
+        op = ["1"] + [f"{max(0, 1 - max(0, (rs * 1.6 - p[3]) / (rs * 0.6))):.2f}" for p in picks] + ["0", "0", "1"]
+        ops = ";".join(op)
+        a = f'dur="{T:g}s" repeatCount="indefinite" keyTimes="{kts}"'
         movers.append(
             f'<rect x="{-cell/2}" y="{-cell/2}" width="{cell}" height="{cell}" rx="2" fill="{shades[lv]}">'
-            f'<animateMotion dur="{T:g}s" repeatCount="indefinite" path="{path}" keyPoints="0;0;1;1;0;0" keyTimes="{kt}" calcMode="linear"/>'
-            f'<animateTransform attributeName="transform" type="scale" additive="sum" dur="{T:g}s" repeatCount="indefinite" values="1;1;0;0;0;1" keyTimes="{kt}"/></rect>'
+            f'<animateMotion {a} values="{mvs}" calcMode="linear"/>'
+            f'<animateTransform attributeName="transform" type="rotate" additive="sum" {a} values="{rots}"/>'
+            f'<animateTransform attributeName="transform" type="scale" additive="sum" {a} values="{scs}"/>'
+            f'<animate attributeName="fill" {a} values="{fills}"/></rect>'
         )
-    out.append("<g>" + "".join(statics) + "</g>")
-    hole = f'<ellipse cx="{hx:.1f}" cy="{hy+1:.1f}" rx="{img_w*.12:.1f}" ry="{img_w*.088:.1f}" fill="#040208"/>'
-    if art:
-        hole += (f'<g><animateTransform attributeName="transform" type="rotate" values="-3 {hx:.1f} {hy:.1f};3 {hx:.1f} {hy:.1f};-3 {hx:.1f} {hy:.1f}" dur="10s" repeatCount="indefinite"/>'
-                 f'<image href="{art}" x="{img_x}" y="{img_y}" width="{img_w}" height="{img_h:.1f}"/></g>')
-    else:
-        hole += f'<ellipse cx="{hx:.1f}" cy="{hy:.1f}" rx="70" ry="26" stroke="{CREAM}" stroke-width="5" transform="rotate(-10 {hx:.1f} {hy:.1f})"/>'
-    out.append(hole)
-    out.append("<g>" + "".join(movers) + "</g>")
-    total = u["contributionsCollection"]["contributionCalendar"]["totalContributions"]
-    out.append(f'<text x="26" y="62" font-size="12" fill="{MUTED}">{total} contributions pulled past the event horizon in the last year</text>')
-    return frame(w, h, "Event Horizon", "\n".join(out))
 
+    disk = []
+    for k, (rx, ry, w_, dash, dur, op_) in enumerate([
+        (52, 9, 3.2, "120 60 40 30", 3.2, 1), (66, 12, 2.4, "80 50 140 40", 4.4, .9),
+        (82, 15, 1.8, "60 90 30 70", 6, .8), (102, 19, 1.2, "40 120 70 90", 8.5, .6),
+    ]):
+        disk.append(
+            f'<ellipse rx="{rx}" ry="{ry}" stroke="url(#doppler)" stroke-width="{w_}" stroke-linecap="round" opacity="{op_}" '
+            f'pathLength="1000" stroke-dasharray="{dash}"><animate attributeName="stroke-dashoffset" values="0;1000" dur="{dur}s" repeatCount="indefinite"/></ellipse>'
+        )
+    disk_g = "".join(disk)
+    hole = f"""<defs>
+<linearGradient id="doppler" x1="-110" y1="0" x2="110" y2="0" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#FFFFFF"/><stop offset=".35" stop-color="{CREAM}"/><stop offset=".7" stop-color="{VIOLET}"/><stop offset="1" stop-color="#4C1D95"/>
+</linearGradient>
+<radialGradient id="halo" cx=".5" cy=".5" r=".5"><stop offset=".3" stop-color="{VIOLET}" stop-opacity=".45"/><stop offset="1" stop-color="{PURPLE}" stop-opacity="0"/></radialGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<clipPath id="back"><rect x="-130" y="-60" width="260" height="60"/></clipPath>
+<clipPath id="front"><rect x="-130" y="0" width="260" height="60"/></clipPath>
+</defs>
+<g transform="translate({hx} {hy}) rotate(-8)">
+<circle class="pulse" r="60" fill="url(#halo)"/>
+<g clip-path="url(#back)" filter="url(#glow)">{disk_g}</g>
+<g filter="url(#glow)" opacity=".95">
+<path d="M-40,-2 A40,36 0 0 1 40,-2" stroke="url(#doppler)" stroke-width="5" stroke-linecap="round"/>
+<path d="M-34,4 A34,26 0 0 0 34,4" stroke="url(#doppler)" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+</g>
+<circle r="{rs * 1.3:.1f}" fill="#030106"/>
+<circle r="{rs * 1.36:.1f}" stroke="{CREAM}" stroke-width="1.3" filter="url(#glow)"><animate attributeName="stroke-opacity" values=".6;1;.6" dur="3s" repeatCount="indefinite"/></circle>
+<g clip-path="url(#front)" filter="url(#glow)">{disk_g}</g>
+</g>"""
+    total = u["contributionsCollection"]["contributionCalendar"]["totalContributions"]
+    body = (
+        f'<text x="22" y="34" font-size="17" font-weight="600" fill="{VIOLET}">Event Horizon</text>'
+        f'<text x="22" y="54" font-size="12" fill="{MUTED}">{total} contributions in the last year, falling in under gravity</text>'
+        + "<g>" + "".join(statics) + "</g>" + hole + "<g>" + "".join(movers) + "</g>"
+    )
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" fill="none" role="img" aria-label="Contribution graph falling into a black hole">
+<style>
+text {{ font-family: {FONT}; }}
+@keyframes pulse {{ 0%,100% {{ opacity: .55 }} 50% {{ opacity: 1 }} }}
+.pulse {{ animation: pulse 4s ease-in-out infinite }}
+</style>
+{body}
+</svg>
+"""
 
 def main():
     login = sys.argv[1]
