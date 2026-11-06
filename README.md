@@ -33,7 +33,6 @@
 <img src="https://img.shields.io/badge/CompTIA-CySA%2B-7A16C9?style=flat-square&labelColor=0B0716" alt="CompTIA CySA+" />
 <img src="https://img.shields.io/badge/CompTIA-CSAP-7A16C9?style=flat-square&labelColor=0B0716" alt="CompTIA CSAP" />
 <img src="https://img.shields.io/badge/CompTIA-Security%2B-7A16C9?style=flat-square&labelColor=0B0716" alt="CompTIA Security+" />
-<img src="https://img.shields.io/badge/Google-Cybersecurity-7A16C9?style=flat-square&labelColor=0B0716" alt="Google Cybersecurity" />
 
 <br/><br/>
 
