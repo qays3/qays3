@@ -21,10 +21,10 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Build stats, languages and activity cards
+      - name: Build stats, languages, activity and black hole cards
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/cards.py ${{ github.repository_owner }} dist
+        run: python scripts/cards.py ${{ github.repository_owner }} dist - card.svg
 
       - uses: Platane/snk@v3
         with:
