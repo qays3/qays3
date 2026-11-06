@@ -34,6 +34,7 @@ query($login: String!) {
     }
     contributionsCollection {
       totalCommitContributions
+      totalPullRequestReviewContributions
       restrictedContributionsCount
       contributionCalendar {
         totalContributions
@@ -86,16 +87,47 @@ def short(n):
     return str(n)
 
 
+def rank_of(commits, prs, issues, reviews, stars, followers):
+    def exp_cdf(x):
+        return 1 - 2 ** -x
+
+    def log_cdf(x):
+        return x / (1 + x)
+
+    parts = [
+        (2, exp_cdf(commits / 250)),
+        (3, exp_cdf(prs / 50)),
+        (1, exp_cdf(issues / 25)),
+        (1, exp_cdf(reviews / 2)),
+        (4, log_cdf(stars / 50)),
+        (1, log_cdf(followers / 10)),
+    ]
+    total = sum(w for w, _ in parts)
+    pct = (1 - sum(w * v for w, v in parts) / total) * 100
+    levels = ["S", "A+", "A", "A-", "B+", "B", "B-", "C+", "C"]
+    limits = [1, 12.5, 25, 37.5, 50, 62.5, 75, 87.5, 100]
+    for lv, lim in zip(levels, limits):
+        if pct <= lim:
+            return lv, pct
+    return "C", pct
+
+
 def stats_card(u):
     stars = sum(r["stargazerCount"] for r in u["repositories"]["nodes"])
     cc = u["contributionsCollection"]
+    commits = cc["totalCommitContributions"] + cc["restrictedContributionsCount"]
+    prs = u["pullRequests"]["totalCount"]
+    issues = u["issues"]["totalCount"]
+    reviews = cc.get("totalPullRequestReviewContributions", 0)
+    followers = u["followers"]["totalCount"]
+    grade, pct = rank_of(commits, prs, issues, reviews, stars, followers)
     rows = [
         ("Total stars", stars),
-        ("Commits, last year", cc["totalCommitContributions"] + cc["restrictedContributionsCount"]),
-        ("Pull requests", u["pullRequests"]["totalCount"]),
-        ("Issues", u["issues"]["totalCount"]),
+        ("Commits, last year", commits),
+        ("Pull requests", prs),
+        ("Issues", issues),
         ("Contributed to", u["repositoriesContributedTo"]["totalCount"]),
-        ("Public repos", u["repositories"]["totalCount"]),
+        ("Contributions, last year", cc["contributionCalendar"]["totalContributions"]),
     ]
     out = []
     for i, (label, val) in enumerate(rows):
@@ -106,18 +138,19 @@ def stats_card(u):
             f'<text x="44" y="{y}" font-size="13" fill="{TEXT}">{escape(label)}</text>'
             f'<text x="300" y="{y}" font-size="13" font-weight="700" fill="{CREAM}" text-anchor="end">{short(val)}</text></g>'
         )
-    total = cc["contributionCalendar"]["totalContributions"]
+    circ = 276.5
+    target = circ * pct / 100
     out.append(
         f'<g class="fade" style="animation-delay:.3s">'
-        f'<circle cx="378" cy="118" r="44" stroke="{BORDER}" stroke-width="7"/>'
-        f'<circle cx="378" cy="118" r="44" stroke="{VIOLET}" stroke-width="7" stroke-linecap="round" '
-        f'stroke-dasharray="276.5" stroke-dashoffset="276.5" transform="rotate(-90 378 118)" '
-        f'style="animation: draw 1.6s ease .4s forwards"/>'
-        f'<text x="378" y="122" font-size="20" font-weight="700" fill="{CREAM}" text-anchor="middle">{short(total)}</text>'
-        f'<text x="378" y="182" font-size="11" fill="{MUTED}" text-anchor="middle">contributions, last year</text></g>'
+        f'<circle cx="378" cy="112" r="44" stroke="{BORDER}" stroke-width="7"/>'
+        f'<circle cx="378" cy="112" r="44" stroke="{VIOLET}" stroke-width="7" stroke-linecap="round" '
+        f'stroke-dasharray="{circ}" stroke-dashoffset="{circ}" transform="rotate(-90 378 112)">'
+        f'<animate attributeName="stroke-dashoffset" from="{circ}" to="{target:.1f}" begin=".4s" dur="1.6s" fill="freeze"/></circle>'
+        f'<text x="378" y="122" font-size="28" font-weight="800" fill="{CREAM}" text-anchor="middle">{grade}</text>'
+        f'<text x="378" y="178" font-size="12" font-weight="600" fill="{LILAC}" text-anchor="middle">Rank {grade}</text>'
+        f'<text x="378" y="196" font-size="11" fill="{MUTED}" text-anchor="middle">Top {max(pct, 0.1):.1f}% on GitHub</text></g>'
     )
     return frame(460, 220, "GitHub Stats", "\n".join(out))
-
 
 def langs_card(u, top=6):
     sizes = {}
