@@ -242,6 +242,69 @@ def activity_card(u, days=31):
     return frame(w, h, "Daily Activity", "\n".join(out))
 
 
+def streak_card(u):
+    days = [d for w in u["contributionsCollection"]["contributionCalendar"]["weeks"] for d in w["contributionDays"]]
+    today = date.today().isoformat()
+    days = [d for d in days if d["date"] <= today]
+    total = sum(d["contributionCount"] for d in days)
+    best, best_s, best_e = 0, None, None
+    run, run_s = 0, None
+    for d in days:
+        if d["contributionCount"] > 0:
+            if run == 0:
+                run_s = d["date"]
+            run += 1
+            if run > best:
+                best, best_s, best_e = run, run_s, d["date"]
+        else:
+            run = 0
+    cur, cur_s, cur_e = 0, None, None
+    i = len(days) - 1
+    if i >= 0 and days[i]["contributionCount"] == 0:
+        i -= 1
+    while i >= 0 and days[i]["contributionCount"] > 0:
+        cur += 1
+        cur_s = days[i]["date"]
+        if cur_e is None:
+            cur_e = days[i]["date"]
+        i -= 1
+
+    def fmt(a, b=None, year=False):
+        if not a:
+            return "No streak yet"
+        f = "%b %d, %Y" if year else "%b %d"
+        fa = date.fromisoformat(a).strftime(f)
+        if not b or b == a:
+            return fa
+        return f"{fa} to {date.fromisoformat(b).strftime(f)}"
+
+    start = days[0]["date"] if days else today
+    W, H = 900, 200
+    cols = [150, 450, 750]
+    out = [
+        f'<line x1="300" y1="60" x2="300" y2="172" stroke="{BORDER}" stroke-width="1.5"/>',
+        f'<line x1="600" y1="60" x2="600" y2="172" stroke="{BORDER}" stroke-width="1.5"/>',
+        f'<g class="fade" style="animation-delay:.2s">'
+        f'<text x="{cols[0]}" y="112" font-size="30" font-weight="800" fill="{CREAM}" text-anchor="middle">{short(total)}</text>'
+        f'<text x="{cols[0]}" y="142" font-size="13" fill="{TEXT}" text-anchor="middle">Total contributions</text>'
+        f'<text x="{cols[0]}" y="164" font-size="11" fill="{MUTED}" text-anchor="middle">{fmt(start, today, True)}</text></g>',
+        f'<g class="fade" style="animation-delay:.35s">'
+        f'<circle cx="{cols[1]}" cy="102" r="38" stroke="{BORDER}" stroke-width="6"/>'
+        f'<circle cx="{cols[1]}" cy="102" r="38" stroke="{VIOLET}" stroke-width="6" stroke-linecap="round" stroke-dasharray="238.8" stroke-dashoffset="238.8" transform="rotate(-90 {cols[1]} 102)">'
+        f'<animate attributeName="stroke-dashoffset" from="238.8" to="0" begin=".4s" dur="1.4s" fill="freeze"/></circle>'
+        f'<circle cx="{cols[1]}" cy="62" r="11" fill="{BG}"/>'
+        f'<path class="pulse" d="M{cols[1]},50 C{cols[1]+9},57 {cols[1]+10},66 {cols[1]+4},72 C{cols[1]+5},67 {cols[1]+2},64 {cols[1]},63 C{cols[1]+1},68 {cols[1]-2},71 {cols[1]-4},72 C{cols[1]-10},66 {cols[1]-7},57 {cols[1]},50 Z" fill="{LILAC}"/>'
+        f'<text x="{cols[1]}" y="112" font-size="28" font-weight="800" fill="{CREAM}" text-anchor="middle">{cur}</text>'
+        f'<text x="{cols[1]}" y="164" font-size="13" font-weight="700" fill="{VIOLET}" text-anchor="middle">Current streak</text>'
+        f'<text x="{cols[1]}" y="182" font-size="11" fill="{MUTED}" text-anchor="middle">{fmt(cur_s, cur_e)}</text></g>',
+        f'<g class="fade" style="animation-delay:.5s">'
+        f'<text x="{cols[2]}" y="112" font-size="30" font-weight="800" fill="{CREAM}" text-anchor="middle">{best}</text>'
+        f'<text x="{cols[2]}" y="142" font-size="13" fill="{TEXT}" text-anchor="middle">Longest streak</text>'
+        f'<text x="{cols[2]}" y="164" font-size="11" fill="{MUTED}" text-anchor="middle">{fmt(best_s, best_e)}</text></g>',
+    ]
+    return frame(W, H, "Streak", "\n".join(out))
+
+
 def blackhole_card(u, card_path=None):
     weeks = u["contributionsCollection"]["contributionCalendar"]["weeks"]
     W, H = 900, 178
@@ -432,6 +495,7 @@ def main():
         ("stats.svg", stats_card(u)),
         ("langs.svg", langs_card(u)),
         ("activity.svg", activity_card(u)),
+        ("streak.svg", streak_card(u)),
         ("blackhole.svg", blackhole_card(u, card)),
     )
     for name, svg in cards:

@@ -19,7 +19,7 @@
 <img width="49%" src="https://raw.githubusercontent.com/qays3/qays3/output/stats.svg" alt="GitHub stats" />
 <img width="49%" src="https://raw.githubusercontent.com/qays3/qays3/output/langs.svg" alt="Top languages" />
 
-<img src="https://github-readme-streak-stats.herokuapp.com?user=qays3&theme=transparent&hide_border=true&ring=A855F7&fire=C084FC&currStreakLabel=A855F7&sideLabels=8F86D8&currStreakNum=CEC8F2&sideNums=CEC8F2&dates=7F77DD" alt="Total contributions, current streak, and longest streak" />
+<img src="https://raw.githubusercontent.com/qays3/qays3/output/streak.svg" width="100%" alt="Total contributions, current streak, and longest streak" />
 
 <h3>Certifications</h3>
 
