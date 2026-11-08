@@ -2,7 +2,7 @@ name: daily activity
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "23 */4 * * *"
   workflow_dispatch:
 
 permissions:
@@ -15,17 +15,20 @@ concurrency:
 jobs:
   commit:
     runs-on: ubuntu-latest
-    timeout-minutes: 3
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
-      - name: Make a commit
+      - name: Make 5 commits
         run: |
           git config user.name "${{ github.repository_owner }}"
           git config user.email "${{ github.repository_owner_id }}+${{ github.repository_owner }}@users.noreply.github.com"
           mkdir -p activity
-          echo "$(date -u +'%Y-%m-%d %H:%M:%S') entry" >> "activity/$(date -u +%Y).log"
-          git add activity
-          git commit -m "daily log $(date -u +'%Y-%m-%d %H:%M')"
+          for i in 1 2 3 4 5; do
+            sleep $((RANDOM % 180 + 30))
+            echo "$(date -u +'%Y-%m-%d %H:%M:%S') entry" >> "activity/$(date -u +%Y).log"
+            git add activity
+            git commit -m "daily log $(date -u +'%Y-%m-%d %H:%M')"
+          done
           git pull --rebase
           git push
